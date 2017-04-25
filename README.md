@@ -6,7 +6,7 @@ Set of tools to calculate mangrove forest structure using either the Point-Cente
 ----
 ## Installation ##
 
-### Using devtools to install###
+### Using devtools to install ###
 Type the following into R
 ```
 install.packages('devtools')
