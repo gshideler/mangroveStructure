@@ -1,0 +1,184 @@
+#' Mangrove Point-Centered Quarter Method Analysis
+#'
+#' This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM). See Cottam and Curtis (1956) for informaiton on PCQM.
+#' @param samplingpoint Column name in dataframe for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.
+#' @param dist Column name in dataframe for distance from tree to sampling point. Default name is "dist". Values must be in meters.
+#' @param species Column name in dataframe for species. Default name is "species".
+#' @param dbh Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.
+#' @param height Column name in dataframe for height. Default name is "height". Values must be in meters.
+#' @param ivplot Logical argument for whether a radar plot of species importance values is displayed (Default is FALSE). If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.
+#' @keywords mangrove structure, pcqm
+#' @examples
+#' pcqm.method(mangrove_data)
+#' pcqm.method(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", ivplot = T)
+#' @export
+
+# Function to analyze forest data using the Point-Centered Quarter Method
+pcqm.method <- function(x, 
+                 samplingpoint = 'samplingpoint',
+                 dist = 'dist',
+                 species = 'species',
+                 dbh = 'dbh',
+                 height = 'height',
+                 ivplot = F){
+  x$SamplingPoint <- x[,samplingpoint]
+  x$Distance <- x[,dist]
+  x$Species <- x[,species]
+  x$dbh <- x[,dbh]
+  x$height <- x[,height]
+  
+  # Get the summarize and transform functions from the plyr namespace
+  summarize = get("summarize", asNamespace('plyr'))
+  transform = get("transform", asNamespace('plyr'))
+  
+  # Get the radarchart function from the fmsb namespace
+  radarchart = get("radarchart", asNamespace('fmsb'))
+  
+  # Get unique number of species
+  spcount <- length(unique(x$Species))
+  
+  # Get height of trees, with mean, min, max; and of three tallest trees for canopy height
+  avgheight <- round(mean(x$height), digits=2)
+  sdheight <- round(sd(x$height), digits=2)
+  heightmin <- min(x$height)
+  heightmax <- max(x$height)
+  
+  # Canopy height
+  x <- x[order(-x$height),]
+  x2 <- head(x,3)
+  canopy <- mean(x2$height)
+  
+  # Get DBH of trees, with mean, min, max
+  avgdbh <- round(mean(x$dbh), digits=2)
+  sddbh <- round(sd(x$dbh), digits=2)
+  dbhmin <- min(x$dbh)
+  dbhmax <- max(x$dbh)
+  
+  
+  
+            # Distance summaries
+            Mdistance <- round(mean(x$Distance),digits=2)
+            Tdistance <- round(sum(x$Distance), digits=2)
+            x$count <- 1:nrow(x)
+            rows <- max(x$count)
+            
+            # Print header outputs
+            cat("\n ---------------------------------------------------")
+            cat("\n Point-Centered Quarter Method data analysis summary")
+            cat("\n ---------------------------------------------------\n\n")
+            cat(paste(" Sampling points =", max(x$SamplingPoint)))
+            cat(paste("\n Number of species =", spcount))
+            cat(paste(",   Total number of trees =", rows))
+            cat(paste("\n Total distance =", Tdistance))
+            cat(paste(",   Mean distance =", Mdistance))
+            
+            # Print height metrics
+            cat(paste("\n\n Height metrics:"))
+            cat(paste("\n Canopy height =", canopy))
+            cat(paste(",   Mean tree height =", avgheight, "("))
+            cat(paste("SD", sdheight))
+            cat(paste(")"))
+            cat(paste("\n Min height =", heightmin))
+            cat(paste(",   Max height =", heightmax))
+            
+            # Print DBH metrics
+            cat(paste("\n\n DBH metrics:"))
+            cat(paste("\n Mean DBH =", avgdbh, "("))
+            cat(paste("SD", sddbh))
+            cat(paste(")"))
+            cat(paste("\n Min DBH =", dbhmin))
+            cat(paste(",   Max DBH =", dbhmax))
+            cat("\n")
+
+
+            # Calculate and print density summaries
+            cat("\n DENSITY COMPUTATION\n -----\n")
+            x$static <- 1
+            densum <- plyr::ddply(x, "static", transform, sum.n = max(count), meandist= mean(Distance), stemcalc=round((1/(mean(Distance)^2))*1000, digits=1))
+            densum1 <- plyr::ddply(densum, "Species", summarize, Number = length(static), Proportion = round(length(static) / max(sum.n), digits=2), stemcalc=max(stemcalc))
+            densum2 <- plyr::ddply(densum1, "Species", transform, Stems_Per_0.1_Ha = round(Proportion * stemcalc))
+            myvarsden <- c("Species", "Number","Proportion", "Stems_Per_0.1_Ha")
+            densum3 <- densum2[myvarsden]
+            print.noquote(densum3, row.names = FALSE)
+            cat(paste(" Total density per 0.1 ha =", sum(densum2$Stems_Per_0.1_Ha)))
+
+            # Calculate and print basal area summaries
+            cat("\n\n BASAL AREA COMPUTATION\n -----\n")
+            densum$BA <- (3.14159265359 * (densum$dbh/2) ^ 2) / 10000
+            densumBA <- plyr::ddply(densum, "Species", summarize, MeanBA = round(mean(BA), digits=4))
+            densumBA <- plyr::join(densum2, densumBA, by="Species")
+            densumBA$Basal_Area <- densumBA$Stems_Per_0.1_Ha * densumBA$MeanBA
+            totbas <- sum(densumBA$Basal_Area)
+            myvars <- c("Species", "MeanBA","Basal_Area")
+            densumBA2 <- densumBA[myvars]
+            densumBA2 <- densumBA2[order(-densumBA2$Basal_Area),]
+            densumBA2$Rank <- 1:nrow(densumBA2)
+            densumBA2 <- densumBA2[order(densumBA2$Species),]
+            print.noquote(densumBA2, row.names = FALSE)
+            cat(paste(" Total basal area in m^2 per 0.1 ha =", totbas))
+
+
+            # Calculate and print absolute frequency
+            cat("\n\n ABSOLUTE FREQUENCY COMPUTATION\n -----\n")
+            freqsum <- plyr::ddply(x, "static", transform, sum.n = max(SamplingPoint))
+            freqsum2 <- plyr::ddply(freqsum, "Species", summarize, Number = length(unique(SamplingPoint)), Frequency = length(unique(SamplingPoint)) / max(sum.n))
+            freqsum2$Frequency <- round(freqsum2$Frequency*100, digits=2)
+            totalfreq <-round(sum(freqsum2$Frequency), digits=2)
+            freqsum2$Frequency <- paste(freqsum2$Frequency, "%")
+            print.noquote(freqsum2, row.names = FALSE)
+            cat(paste(" Total frequency =", totalfreq, "%"))
+
+
+            # Relative comparisons
+            cat("\n\n RELATIVE COMPUTATIONS\n -----\n")
+            densum2$totspec <- sum(densum2$Stems_Per_0.1_Ha)
+            densum2$Relative_Density <- round((densum2$Stems_Per_0.1_Ha / densum2$totspec) * 100, digits=1)
+            compare <- plyr::join(densum2, densumBA2, by="Species")
+            freqsum2 <- plyr::ddply(freqsum, "Species", summarize, Number = length(unique(SamplingPoint)), Frequency = length(unique(SamplingPoint)) / max(sum.n)*100)
+            freqsum2$Relative_Frequency <- round(freqsum2$Frequency / totalfreq *100, digits=1)
+            compare <- plyr::join(compare, freqsum2, by="Species")
+            compare$Relative_Dominance <- compare$Basal_Area/totbas*100
+            compare$Relative_Dominance <- round(compare$Relative_Dominance, digits=1)
+            compare <- plyr::ddply(compare, "Species", transform, Importance_Value = sum(Relative_Density+Relative_Dominance+Relative_Frequency))
+            compare <- compare[order(-compare$Importance_Value),]
+            compare$Rank <- 1:nrow(compare)
+            compare <- compare[order(compare$Species),]
+            myvars <- c("Species", "Relative_Density", "Relative_Dominance", "Relative_Frequency", "Importance_Value", "Rank")
+            relative <- compare[myvars]
+            relative$Relative_Density <- paste(relative$Relative_Density, "%")
+            relative$Relative_Frequency <- paste(relative$Relative_Frequency, "%")
+            relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
+            print.noquote(relative, row.names = FALSE)
+            
+            if(ivplot == TRUE){
+            # PLOT RELATIVE IMPORATNCE DATA
+            compare2 <- compare[order(compare$Species),]
+            compare2 <- subset(compare2, compare2$Rank<6)
+            MX <- data.frame(100, 100, 100)
+            names(MX) <- c("Rel_Dom", "Rel_Den", "Rel_Fre")
+            MN <- data.frame(0, 0, 0)
+            names(MN) <- c("Rel_Dom", "Rel_Den", "Rel_Fre")
+            Rel_Dom <- data.frame(compare2$Relative_Dominance)
+            names(Rel_Dom)<-"Rel_Dom"
+            Rel_Den <- data.frame(compare2$Relative_Density)
+            names(Rel_Den)<-"Rel_Den"
+            Rel_Fre <- data.frame(compare2$Relative_Frequency)
+            names(Rel_Fre) <- "Rel_Fre"
+            
+            plotdata <- cbind(Rel_Dom, Rel_Fre, Rel_Den)
+            plotdata2 <- rbind(MX, MN, plotdata)
+            
+            colors_border=c( "firebrick", "black" , "dodgerblue", "goldenrod1", "lightgreen" )
+            colors_in=c( "firebrick", "black" , "dodgerblue", "goldenrod1", "lightgreen" )
+            speclist <- compare2$Species
+            
+            # Plot radarChart
+            fmsb::radarchart(plotdata2, maxmin=TRUE,
+                       axistype=1 , centerzero = TRUE, vlabels=c("Relative\ndominance (%)", "Relative\ndensity (%)", "Relative\nfrequency (%)"),
+                       pcol=colors_border,  plwd=4 , plty=1, 
+                       cglcol="grey", cglty=1, axislabcol="black", seg=5, caxislabels=seq(0,100,20), cglwd=0.8)
+            legend(.65, .8, legend = speclist, col=colors_in, title = "Species", seg.len = 2,  pch = 16, lwd=4,lty = 1, bty="n",box.col="grey")
+            }
+}
+
+
