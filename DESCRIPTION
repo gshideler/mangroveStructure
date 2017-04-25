@@ -3,10 +3,10 @@ Type: Package
 Title: Tools for calculating mangrove forest structure
 Version: 0.1.1
 Date: 2017-04-25
-Authors@R: c(person("Geoffrey", "Shideler", role = c("aut", "cre"),
+Authors@R: c(person("Geoffrey", "S", "Shideler", role = c("aut", "cre"),
                      email = "geoffreyshideler@gmail.com"),
-              person("Rafael", "Araújo", role = "aut", email = "raraujo@miami.edu"),
-              person("Eric", "Sokol", role = "ctb",
+              person("Rafael", "J", "Araújo", role = "aut", email = "raraujo@miami.edu"),
+              person("Eric", "R", "Sokol", role = "ctb",
 	             email = "eric.r.sokol@colorado.edu"))
 Author: Geoffrey S Shideler and Rafael J Araújo, with contributions from Eric R Sokol
 Description: Set of tools to calculate mangrove forest structure using either the Point-Centered Quarter Method or fixed-area sampling methods. Outputs include density, diameter, basal area, height, as well as relative comparisons of density, dominance, frequency and importance value (IV). Output also includes functions for common structural indices [e.g., Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984)] and visual representations of relative values and canopy height.
