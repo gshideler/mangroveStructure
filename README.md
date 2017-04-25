@@ -33,6 +33,8 @@ plot_data<- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/ma
 
 plot.method(plot_data, ivplot=TRUE)
 plot.indices(plot_data, ageplot=TRUE)
+```
+----
 
 ### References ###
 ```
