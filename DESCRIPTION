@@ -10,6 +10,7 @@ Authors@R: c(person("Geoffrey", "Shideler", "S", role = c("aut", "cre"),
 	             email = "eric.r.sokol@colorado.edu"))
 Author: Geoffrey S Shideler and Rafael J Araújo, with contributions from Eric R Sokol
 URL: https://github.com/gshideler/mangroveStructure
+BugReports: https://github.com/gshideler/mangroveStructure/issues
 Description: Set of tools to calculate mangrove forest structure using either the Point-Centered Quarter Method or fixed-area sampling methods. Outputs include density, diameter, basal area, height, as well as relative comparisons of density, dominance, frequency, and importance value (IV). Output also includes functions for common structural indices [e.g., Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984)] and visual representations of relative values and canopy height.
 Imports:
     plyr,
