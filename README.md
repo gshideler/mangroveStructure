@@ -38,5 +38,6 @@ plot.indices(plot_data, ageplot=TRUE)
 
 ## References ##
 Cintrón G, Shaeffer Novelli Y. 1984. Methods for studying mangrove structure. In: Snedaker SC, Snedaker JG. (eds.) The mangrove ecosystem: research methods. Unesco. 251 p.
+
 Cottam G, Curtis JT. 1956. The use of distance measures in phytosociological sampling. Ecology. 37:451–460.
 Holdridge LR. 1967. Life zone ecology. Tropical Science Center. San José, Costa Rica. 206 p.
