@@ -4,7 +4,7 @@
 \alias{plot.indices}
 \title{Mangrove Indices for Plot Method}
 \usage{
-\method{plot}{indices}(x, plotnumber = "plotnumber", dbh = "dbh",
+plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
   species = "species", height = "height", plot.width = 10,
   plot.length = 10, ageplot = F)
 }
