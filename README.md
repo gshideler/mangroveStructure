@@ -22,14 +22,14 @@ library(mangroveStructure)
 library(RCurl) #This is a library to allow the downloading of csv files from github for use examples
 
 ## Compute structure for point-centered transects
-pcqm_data<- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/pcqm_data.csv"), header=TRUE)
+pcqm_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/pcqm_data.csv"), header=TRUE)
  
 pcqm.method(pcqm_data, ivplot=TRUE)
 pcqm.indices(pcqm_data, ageplot=TRUE)
 canopy.profile(pcqm_data)
 
 ## Compute structure for fixed-area sampling plots
-plot_data<- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/plot_data.csv"), header=TRUE)
+plot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/plot_data.csv"), header=TRUE)
 
 plot.method(plot_data, ivplot=TRUE)
 plot.indices(plot_data, ageplot=TRUE)
