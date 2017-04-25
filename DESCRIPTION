@@ -3,10 +3,10 @@ Type: Package
 Title: Tools for calculating mangrove forest structure
 Version: 0.1.1
 Date: 2017-04-25
-Authors@R: c(person("Geoffrey", "Shideler", "S", role = c("aut", "cre"),
+Authors@R: c(person("Geoffrey S", "Shideler", role = c("aut", "cre"),
                      email = "geoffreyshideler@gmail.com"),
-              person("Rafael", "Araújo", "J", role = "aut", email = "raraujo@miami.edu"),
-              person("Eric", "Sokol", "R", role = "ctb",
+              person("Rafael J", "Araújo", role = "aut", email = "raraujo@miami.edu"),
+              person("Eric R", "Sokol", role = "ctb",
 	             email = "eric.r.sokol@colorado.edu"))
 Author: Geoffrey S Shideler and Rafael J Araújo, with contributions from Eric R Sokol
 URL: https://github.com/gshideler/mangroveStructure
