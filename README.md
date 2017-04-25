@@ -19,9 +19,19 @@ You can skip the first line if you already have devtools installed.
 ### Use examples ###
 ```
 library(mangroveStructure)
+library(RCurl)
 
 ## Compute structure for point-centered transects
-test_pcqm <-
+pcqm_temp <- getURL("https://github.com/gshideler/mangroveStructure/tree/master/testdata/pcqm_data.csv")
+pcqm_data <- read.csv(text = pcqm_temp)
+
+pcqm.method(pcqm_data, ivplot=TRUE)
+pcqm.indices(pcqm_data, ageplot=TRUE)
+canopy.profile(pcqm_data)
 
 ## Compute structure for fixed-area sampling plots
-test_plot <-
+plot_temp <- getURL("https://github.com/gshideler/mangroveStructure/tree/master/testdata/plot_data.csv")
+plot_data <- read.csv(text = plot_temp)
+
+plot.method(plot_data, ivplot=TRUE)
+plot.indices(plot_data, ageplot=TRUE)
