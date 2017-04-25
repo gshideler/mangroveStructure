@@ -19,7 +19,7 @@ You can skip the first line if you already have devtools installed.
 ## Use examples ##
 ```
 library(mangroveStructure)
-library(RCurl)
+library(RCurl) #This is a library to allow the downloading of csv files from github for use examples
 
 ## Compute structure for point-centered transects
 pcqm_data<- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/pcqm_data.csv"), header=TRUE)
