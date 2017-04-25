@@ -19,7 +19,7 @@ canopy.profile(x, samplingpoint = "samplingpoint", height = "height",
 \item{ymax}{Optional argument for specifying the maximum extent of the y axis. If not specified (Default), ymax is estimated based on dataframe values.}
 }
 \description{
-This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
+This function allows you to plot the canopy profile for mangrove forest transects from pcqm data.
 }
 \examples{
 canopy.profile(mangrove_data)
