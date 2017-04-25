@@ -6,7 +6,7 @@ Set of tools to calculate mangrove forest structure using either the Point-Cente
 ----
 ## Installation ##
 
-### Using devtools ###
+### Using devtools to install###
 Type the following into R
 ```
 install.packages('devtools')
@@ -16,7 +16,7 @@ You can skip the first line if you already have devtools installed.
 
 ----
 
-### Use examples ###
+## Use examples ##
 ```
 library(mangroveStructure)
 library(RCurl)
@@ -36,7 +36,7 @@ plot.indices(plot_data, ageplot=TRUE)
 ```
 ----
 
-### References ###
+## References ##
 ```
 Cintrón G, Shaeffer Novelli Y. 1984. Methods for studying mangrove structure. In: Snedaker SC, Snedaker JG. (eds.) The mangrove ecosystem: research methods. Unesco. 251 p.
 Cottam G, Curtis JT. 1956. The use of distance measures in phytosociological sampling. Ecology. 37:451–460.
