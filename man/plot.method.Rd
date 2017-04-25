@@ -4,7 +4,7 @@
 \alias{plot.method}
 \title{Mangrove Plot Method Analysis}
 \usage{
-\method{plot}{method}(x, plotnumber = "plotnumber", dbh = "dbh",
+plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
   species = "species", height = "height", plot.width = 10,
   plot.length = 10, ivplot = FALSE)
 }
