@@ -16,6 +16,25 @@ You can skip the first line if you already have devtools installed.
 
 ----
 
+## Overview of package functions ##
+
+### pcqm.method ###
+This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM) (Cottam and Curtis 1956).
+
+### pcqm.indices ###
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM).
+
+### canopy.profile ###
+This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data.
+
+### plot.method ###
+This function allows you to estimate mangrove forest structure based on fixed-area sampling (plot).
+
+### plot.indices ###
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot).
+
+----
+
 ## Use examples ##
 ```
 library(mangroveStructure)
