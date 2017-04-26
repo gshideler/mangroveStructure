@@ -36,11 +36,13 @@ This function allows you to calculate the Holdridge Complexity Index (Holdridge 
 ----
 
 ## Use examples ##
+### Load the necessary libraries ###
+Note: the RCurl library is to allow for downloading of csv files from the github server, which are pulled for the examples below.
 ```
 library(mangroveStructure)
-library(RCurl) #This is a library to allow the downloading of csv files from github for use examples
+library(RCurl)
 ```
-#### Compute structure for point-centered transects ####
+### Compute structure for point-centered transects (PCQM) ###
 ```
 pcqm_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/pcqm_data.csv"), header=TRUE)
  
@@ -48,13 +50,21 @@ pcqm.method(pcqm_data, ivplot=TRUE)
 pcqm.indices(pcqm_data, ageplot=TRUE)
 canopy.profile(pcqm_data)
 ```
+If your columns are named different from the defaults, you can specify them using the appropriate argument. See package help files for more information and for defaults.
+
+Example:
+```
+pcqm.method(pcqm_data, samplingpoint = "Sampling_Point", dbh = "Diameter")
+
+```
 #### Compute structure for fixed-area sampling plots ####
-````
+```
 plot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/plot_data.csv"), header=TRUE)
 
 plot.method(plot_data, ivplot=TRUE)
 plot.indices(plot_data, ageplot=TRUE)
 ```
+
 ----
 ## License ##
 Use of <strong>mangroveStructure</strong> is covered under the open source "MIT License".
