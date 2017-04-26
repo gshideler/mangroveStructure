@@ -50,7 +50,7 @@ pcqm.method(pcqm_data, ivplot=TRUE)
 pcqm.indices(pcqm_data, ageplot=TRUE)
 canopy.profile(pcqm_data)
 ```
-If your column names are different from the defaults, you can specify them using the appropriate argument. See package help files for more information and for all defaults. This applies both to all functions in the package.
+If your column names are different from the defaults, you can specify them using the appropriate argument. See package help files for more information and for all defaults. This applies to all functions in the package.
 
 Example:
 ```
@@ -69,7 +69,7 @@ plot.indices(plot_data, ageplot=TRUE)
 ## License ##
 Use of <strong>mangroveStructure</strong> is covered under the open source "MIT License".
 
-See <a href = "https://raw.githubusercontent.com/gshideler/mangroveStructure/master/LICENSE">Liscence</a> page for more details.
+See <a href = "https://raw.githubusercontent.com/gshideler/mangroveStructure/master/LICENSE">License</a> page for more details.
 
 ----
 ## References ##
