@@ -2,7 +2,7 @@
 % Please edit documentation in R/canopy.profile.R
 \name{canopy.profile}
 \alias{canopy.profile}
-\title{Mangrove Canopy Plot for Point-Centered Quarter Method}
+\title{Mangrove Canopy Profile for Point-Centered Quarter Method}
 \usage{
 canopy.profile(x, samplingpoint = "samplingpoint", height = "height",
   interval10 = TRUE, interval = "interval", ymax = NULL)
