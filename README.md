@@ -54,7 +54,10 @@ plot.method(plot_data, ivplot=TRUE)
 plot.indices(plot_data, ageplot=TRUE)
 ```
 ----
+## License ##
+See <a href = "https://raw.githubusercontent.com/gshideler/mangroveStructure/master/LICENSE">Liscence</a> page
 
+----
 ## References ##
 Cintrón G, Shaeffer Novelli Y. 1984. Methods for studying mangrove structure. In: Snedaker SC, Snedaker JG. (eds.) The mangrove ecosystem: research methods. Unesco. 251 p.
 
