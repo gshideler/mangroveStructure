@@ -55,7 +55,9 @@ plot.indices(plot_data, ageplot=TRUE)
 ```
 ----
 ## License ##
-See <a href = "https://raw.githubusercontent.com/gshideler/mangroveStructure/master/LICENSE">Liscence</a> page
+Use of <strong>mangroveStructure</strong> is covered under the open source "MIT License".
+
+See <a href = "https://raw.githubusercontent.com/gshideler/mangroveStructure/master/LICENSE">Liscence</a> page for more details.
 
 ----
 ## References ##
