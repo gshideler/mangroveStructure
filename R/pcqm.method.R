@@ -35,7 +35,7 @@ pcqm.method <- function(x,
   radarchart = get("radarchart", asNamespace('fmsb'))
   
   #Check for NA cells
-  if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
+  if(any(is.na(x)) == TRUE) stop("Data frame cannot contain missing values (NAs).")
     
   # Get unique number of species
   spcount <- length(unique(x$Species))
