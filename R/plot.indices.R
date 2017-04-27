@@ -31,7 +31,7 @@ plot.indices <- function(x,
                            x$height <- x[,height]
   
     #Check for NA cells
-    if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
+    if(any(is.na(x)) == TRUE) stop("Data frame cannot contain missing values (NAs).")
 
                            
         # Pre calculations
