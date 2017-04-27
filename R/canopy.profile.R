@@ -26,8 +26,6 @@ canopy.profile<-function(x,
   #Check for NA cells
   if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
 
-
-
   #Preference for y axis maximum value display
     null_Max <- max(x$height)+mean(sd(x$height))
     Max <- if(is.null(ymax)) null_Max else ymax
