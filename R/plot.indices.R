@@ -1,10 +1,10 @@
 #' Mangrove Indices for Plot Method
 #'
 #' This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
-#' @param plotnumber Column name in dataframe for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
-#' @param dbh Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.
-#' @param species Column name in dataframe for species. Default name is "species".
-#' @param height Column name in dataframe for height. Default name is "height". Values must be in meters.
+#' @param plotnumber Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
+#' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
+#' @param species Column name in data frame for species. Default name is "species".
+#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param plot.width Plot width measured in meters. Default is 10 meters.
 #' @param plot.length Plot length measured in meters. Default is 10 meters.
 #' @param ageplot Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
