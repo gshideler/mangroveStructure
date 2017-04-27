@@ -69,7 +69,7 @@ pcqm.method <- function(x,
             cat("\n ---------------------------------------------------")
             cat("\n Point-Centered Quarter Method data analysis summary")
             cat("\n ---------------------------------------------------\n\n")
-            cat(paste(" Sampling points =", max(x$SamplingPoint)))
+            cat(paste(" Sampling points =", length(unique(x$SamplingPoint))))
             cat(paste("\n Number of species =", spcount))
             cat(paste(",   Total number of trees =", rows))
             cat(paste("\n Total distance =", Tdistance))
