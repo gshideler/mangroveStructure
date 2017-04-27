@@ -1,10 +1,10 @@
 #' Mangrove Plot Method Analysis
 #'
 #' This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM). See Cottam and Curtis (1956) for informaiton on PCQM.
-#' @param plotnumber Column name in dataframe for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
-#' @param dbh Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.
-#' @param species Column name in dataframe for species. Default name is "species".
-#' @param height Column name in dataframe for height. Default name is "height". Values must be in meters.
+#' @param plotnumber Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
+#' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
+#' @param species Column name in data frame for species. Default name is "species".
+#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param plot.width Plot width measured in meters. Default is 10 meters.
 #' @param plot.length Plot length measured in meters. Default is 10 meters.
 #' @param ivplot Logical argument for whether a radar plot of species importance values is displayed. If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.
