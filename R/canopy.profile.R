@@ -22,6 +22,10 @@ canopy.profile<-function(x,
   
     x$SamplingPoint <- x[,samplingpoint]
     x$height <- x[,height]
+  
+  #Check for NA cells
+  if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
+
 
 
   #Preference for y axis maximum value display
