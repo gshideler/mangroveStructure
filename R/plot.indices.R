@@ -29,6 +29,10 @@ plot.indices <- function(x,
                            x$Species <- x[,species]
                            x$dbh <- x[,dbh]
                            x$height <- x[,height]
+  
+    #Check for NA cells
+    if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
+
                            
         # Pre calculations
         width = plot.width
