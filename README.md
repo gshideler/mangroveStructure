@@ -19,19 +19,19 @@ You can skip the first line if you already have devtools installed.
 ## Overview of package functions ##
 
 #### pcqm.method() ####
-This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM) (Cottam and Curtis 1956).
+This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM) (Cottam and Curtis 1956). An individual tree must be present in each quarter, and a single cannot be measured twice. Function will not compute if missing values (NAs) are present.
 
 #### pcqm.indices() ####
-This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM).
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM). An individual tree must be present in each quarter, and a single cannot be measured twice. Function will not compute if missing values (NAs) are present.
 
 #### canopy.profile() ####
-This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data.
+This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data. Function will not compute if missing values (NAs) are present.
 
 #### plot.method() ####
-This function allows you to estimate mangrove forest structure based on fixed-area sampling (plot).
+This function allows you to estimate mangrove forest structure based on fixed-area sampling (plot). Function will not compute if missing values (NAs) are present.
 
 #### plot.indices() ####
-This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot).
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot). Function will not compute if missing values (NAs) are present.
 
 ----
 
