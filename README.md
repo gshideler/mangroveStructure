@@ -25,15 +25,16 @@ Functions will not compute if missing values (NAs) are present.
 This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM) (Cottam and Curtis 1956). Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. 
 
 #### pcqm.indices() ####
-This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM). Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. 
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM). Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. Height is required for the Holdridge Complexity Index.
 
 #### canopy.profile() ####
 This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data. Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice.
+
 #### plot.method() ####
 This function allows you to estimate mangrove forest structure based on fixed-area sampling (plot). 
 
 #### plot.indices() ####
-This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot). 
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot). Height is required for the Holdridge Complexity Index.
 
 ----
 
