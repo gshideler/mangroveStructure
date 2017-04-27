@@ -23,7 +23,7 @@ pcqm.indices <- function(x,
   x$Distance <- x[,dist]
   x$Species <- x[,species]
   x$dbh <- x[,dbh]
-  x$height <- x[,height]
+  if("height" %in% colnames(x)) x$height <- x[,height]
   
   ## Get the functions from the plyr namespace
   summarize = get("summarize", asNamespace('plyr'))
@@ -56,17 +56,17 @@ pcqm.indices <- function(x,
   totbas <- sum(densumBA$Basal_Area)
   
   # Get height of three tallest trees
-  x <- x[order(-x$height),]
-  x2 <- head(x,3)
-  heightcalc <- mean(x2$height)
+  if("height" %in% colnames(x)) x <- x[order(-x$height),]
+  if("height" %in% colnames(x)) x2 <- head(x,3)
+  if("height" %in% colnames(x)) heightcalc <- mean(x2$height)
   
   # Calculate Holdridge Complexity Index
-  CI <- round((heightcalc * totbas * totden * spp) / 1000, digits=2)
+  if("height" %in% colnames(x)) CI <- round((heightcalc * totbas * totden * spp) / 1000, digits=2)
   
   # Print the Output from HCI
-  cat(" Holdridge Complexity Index\n -----\n")
-  cat(paste(" ", CI))
-  cat("\n\n")
+  if("height" %in% colnames(x)) cat(" Holdridge Complexity Index\n -----\n")
+  if("height" %in% colnames(x)) cat(paste(" ", CI))
+  if("height" %in% colnames(x)) cat("\n\n")
   
   # Calculate Mean Stand Diameter
   MSD <- round(sqrt((totbas * 12732.39)/totden), digits=2)
