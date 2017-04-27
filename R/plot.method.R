@@ -72,7 +72,7 @@ plot.method<-function(x,
   cat("\n ---------------------------------------------------")
   cat("\n Plot Method data analysis summary")
   cat("\n ---------------------------------------------------\n\n")
-  cat(paste(" Number of plots =", max(x$PlotNumber)))
+  cat(paste(" Number of plots =", length(unique(x$PlotNumber))))
   cat(paste(",   Total number of trees =", max(x$rows)))
   cat(paste("\n Area of each plot =", area, "m^2"))
   cat(paste(",   Sum of all plot areas =", max(x$areasum), "m^2"))
