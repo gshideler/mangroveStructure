@@ -5,7 +5,7 @@
 #' @param dist Column name in data frame for distance from tree to sampling point. Default name is "dist". Values must be in meters.
 #' @param species Column name in data frame for species. Default name is "species".
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
-#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional outputs are displayed.
+#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param ageplot Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
 #' @keywords mangrove structure, pcqm, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
