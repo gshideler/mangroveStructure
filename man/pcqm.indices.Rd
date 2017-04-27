@@ -8,15 +8,15 @@ pcqm.indices(x, samplingpoint = "samplingpoint", dist = "dist",
   species = "species", dbh = "dbh", height = "height", ageplot = F)
 }
 \arguments{
-\item{samplingpoint}{Column name in dataframe for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.}
+\item{samplingpoint}{Column name in data frame for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.}
 
-\item{dist}{Column name in dataframe for distance from tree to sampling point. Default name is "dist". Values must be in meters.}
+\item{dist}{Column name in data frame for distance from tree to sampling point. Default name is "dist". Values must be in meters.}
 
-\item{species}{Column name in dataframe for species. Default name is "species".}
+\item{species}{Column name in data frame for species. Default name is "species".}
 
-\item{dbh}{Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.}
+\item{dbh}{Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.}
 
-\item{height}{Column name in dataframe for height. Default name is "height". Values must be in meters.}
+\item{height}{Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.}
 
 \item{ageplot}{Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).}
 }
