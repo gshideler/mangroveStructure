@@ -25,7 +25,7 @@ This function allows you to estimate mangrove forest structure based on sampling
 This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) based on sampling using the Point-Centered Quarter Method (PCQM). Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. Function will not compute if missing values (NAs) are present. Column with height measurements is optional, but if included, height-related metrics are displayed.
 
 #### canopy.profile() ####
-This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data. Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. Function will not compute if missing values (NAs) are present. Height is required for this function.
+This function allows you to plot canopy height across distance from Point-Centered Quarter Method transect data. Following Cintrón and Schaeffer Novelli (1984): (1) an individual tree must be present in each quarter, and (2) a single tree should not be measured twice. Function will not compute if missing values (NAs) are present.
 
 #### plot.method() ####
 This function allows you to estimate mangrove forest structure based on fixed-area sampling (plot). Function will not compute if missing values (NAs) are present. Column with height measurements is optional, but if included, height-related metrics are displayed.
