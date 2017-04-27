@@ -9,13 +9,13 @@ plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
   plot.length = 10, ageplot = F)
 }
 \arguments{
-\item{plotnumber}{Column name in dataframe for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.}
+\item{plotnumber}{Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.}
 
-\item{dbh}{Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.}
+\item{dbh}{Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.}
 
-\item{species}{Column name in dataframe for species. Default name is "species".}
+\item{species}{Column name in data frame for species. Default name is "species".}
 
-\item{height}{Column name in dataframe for height. Default name is "height". Values must be in meters.}
+\item{height}{Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.}
 
 \item{plot.width}{Plot width measured in meters. Default is 10 meters.}
 
