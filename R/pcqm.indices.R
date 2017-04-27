@@ -30,7 +30,7 @@ pcqm.indices <- function(x,
   transform = get("transform", asNamespace('plyr'))
   
   #Check for NA cells
-  if(any(is.na(x)) == TRUE) stop("Dataframe cannot contain missing values (NAs).")
+  if(any(is.na(x)) == TRUE) stop("Data frame cannot contain missing values (NAs).")
   
   # Pre calculations for later use
   spp <- length(unique(x$Species))
