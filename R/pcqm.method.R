@@ -25,7 +25,7 @@ pcqm.method <- function(x,
   x$Distance <- x[,dist]
   x$Species <- x[,species]
   x$dbh <- x[,dbh]
-  x$height <- x[,height]
+  if("height" %in% colnames(x)) x$height <- x[,height]
   
   # Get the summarize and transform functions from the plyr namespace
   summarize = get("summarize", asNamespace('plyr'))
@@ -41,15 +41,15 @@ pcqm.method <- function(x,
   spcount <- length(unique(x$Species))
   
   # Get height of trees, with mean, min, max; and of three tallest trees for canopy height
-  avgheight <- round(mean(x$height), digits=2)
-  sdheight <- round(sd(x$height), digits=2)
-  heightmin <- min(x$height)
-  heightmax <- max(x$height)
+  if("height" %in% colnames(x)) avgheight <- round(mean(x$height), digits=2)
+  if("height" %in% colnames(x)) sdheight <- round(sd(x$height), digits=2)
+  if("height" %in% colnames(x)) heightmin <- min(x$height)
+  if("height" %in% colnames(x)) heightmax <- max(x$height)
   
   # Canopy height
-  x <- x[order(-x$height),]
-  x2 <- head(x,3)
-  canopy <- mean(x2$height)
+  if("height" %in% colnames(x)) x <- x[order(-x$height),]
+  if("height" %in% colnames(x)) x2 <- head(x,3)
+  if("height" %in% colnames(x)) canopy <- mean(x2$height)
   
   # Get DBH of trees, with mean, min, max
   avgdbh <- round(mean(x$dbh), digits=2)
@@ -76,13 +76,13 @@ pcqm.method <- function(x,
             cat(paste(",   Mean distance =", Mdistance))
             
             # Print height metrics
-            cat(paste("\n\n Height metrics:"))
-            cat(paste("\n Canopy height =", canopy))
-            cat(paste(",   Mean tree height =", avgheight, "("))
-            cat(paste("SD", sdheight))
-            cat(paste(")"))
-            cat(paste("\n Min height =", heightmin))
-            cat(paste(",   Max height =", heightmax))
+            if("height" %in% colnames(x)) cat(paste("\n\n Height metrics:"))
+            if("height" %in% colnames(x)) cat(paste("\n Canopy height =", canopy))
+            if("height" %in% colnames(x)) cat(paste(",   Mean tree height =", avgheight, "("))
+            if("height" %in% colnames(x)) cat(paste("SD", sdheight))
+            if("height" %in% colnames(x)) cat(paste(")"))
+            if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
+            if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
             
             # Print DBH metrics
             cat(paste("\n\n DBH metrics:"))
