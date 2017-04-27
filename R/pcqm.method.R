@@ -1,11 +1,11 @@
 #' Mangrove Point-Centered Quarter Method Analysis
 #'
 #' This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM). See Cottam and Curtis (1956) for informaiton on PCQM.
-#' @param samplingpoint Column name in dataframe for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.
-#' @param dist Column name in dataframe for distance from tree to sampling point. Default name is "dist". Values must be in meters.
-#' @param species Column name in dataframe for species. Default name is "species".
-#' @param dbh Column name in dataframe for diameter at breast height. Default name is "dbh". Values must be in centimeters.
-#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional outputs are displayed.
+#' @param samplingpoint Column name in data frame for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.
+#' @param dist Column name in data frame for distance from tree to sampling point. Default name is "dist". Values must be in meters.
+#' @param species Column name in data frame for species. Default name is "species".
+#' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
+#' @param height Column name in data frame for height (OPTIONAL). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param ivplot Logical argument for whether a radar plot of species importance values is displayed (Default is FALSE). If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.
 #' @keywords mangrove structure, pcqm
 #' @examples
