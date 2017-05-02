@@ -20,6 +20,10 @@ canopy.profile<-function(x,
                       interval = 'interval',
                       ymax = NULL){
   
+    #Confirm it is a data frame
+     x <- as.data.frame(x)
+  
+    #Load columns
     x$SamplingPoint <- x[,samplingpoint]
     x$height <- x[,height]
   
