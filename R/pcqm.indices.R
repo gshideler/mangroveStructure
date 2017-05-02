@@ -19,6 +19,11 @@ pcqm.indices <- function(x,
                          dbh = 'dbh',
                          height = 'height',
                          ageplot = F){
+  
+  #Confirm it is a data frame
+  x <- as.data.frame(x)
+  
+  #Load columns
   x$SamplingPoint <- x[,samplingpoint]
   x$Distance <- x[,dist]
   x$Species <- x[,species]
