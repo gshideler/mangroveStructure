@@ -49,7 +49,7 @@ pcqm.method <- function(x,
   # Canopy height
   if("height" %in% colnames(x)) x <- x[order(-x$height),]
   if("height" %in% colnames(x)) x2 <- head(x,3)
-  if("height" %in% colnames(x)) canopy <- mean(x2$height)
+  if("height" %in% colnames(x)) canopy <- round(mean(x2$height), digits=2)
   
   # Get DBH of trees, with mean, min, max
   avgdbh <- round(mean(x$dbh), digits=2)
