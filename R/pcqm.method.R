@@ -21,14 +21,18 @@ pcqm.method <- function(x,
                  dbh = 'dbh',
                  height = 'height',
                  ivplot = F){
+  
+   #Confirm it is a data frame
+  x <- as.data.frame(x)
+  
+  #Load columns
   x$SamplingPoint <- x[,samplingpoint]
   x$Distance <- x[,dist]
   x$Species <- x[,species]
   x$dbh <- x[,dbh]
   if("height" %in% colnames(x)) x$height <- x[,height]
   
-  #Confirm it is a data frame
-  x <- as.data.frame(x)
+ 
   
   # Get the summarize and transform functions from the plyr namespace
   summarize = get("summarize", asNamespace('plyr'))
