@@ -24,7 +24,10 @@ plot.indices <- function(x,
                          plot.length=10, 
                          ageplot=F){
                            
-                           
+                         #Confirm it is a data frame
+                         x <- as.data.frame(x)
+  
+                            #Load columns
                            x$PlotNumber <- x[,plotnumber]
                            x$Species <- x[,species]
                            x$dbh <- x[,dbh]
