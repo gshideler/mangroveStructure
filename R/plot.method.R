@@ -24,6 +24,10 @@ plot.method<-function(x,
                       plot.length=10,
                       ivplot = FALSE){
   
+  #Confirm it is a data frame
+  x <- as.data.frame(x)
+  
+  #Load columns
   x$PlotNumber <- x[,plotnumber]
   x$Species <- x[,species]
   x$dbh <- x[,dbh]
