@@ -27,6 +27,9 @@ pcqm.method <- function(x,
   x$dbh <- x[,dbh]
   if("height" %in% colnames(x)) x$height <- x[,height]
   
+  #Confirm it is a data frame
+  x <- as.data.frame(x)
+  
   # Get the summarize and transform functions from the plyr namespace
   summarize = get("summarize", asNamespace('plyr'))
   transform = get("transform", asNamespace('plyr'))
