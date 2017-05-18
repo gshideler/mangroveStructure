@@ -159,6 +159,8 @@ pcqm.method <- function(x,
             relative$Relative_Frequency <- paste(relative$Relative_Frequency, "%")
             relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
             print.noquote(relative, row.names = FALSE)
+            IV_Table <<- relative
+
             
             if(ivplot == TRUE){
             # PLOT RELATIVE IMPORATNCE DATA
