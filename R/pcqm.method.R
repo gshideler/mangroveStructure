@@ -160,6 +160,7 @@ pcqm.method <- function(x,
             relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
             print.noquote(relative, row.names = FALSE)
             data.frame(relative)
+            return(relative)
 
             
             if(ivplot == TRUE){
