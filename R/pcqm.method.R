@@ -159,8 +159,7 @@ pcqm.method <- function(x,
             relative$Relative_Frequency <- paste(relative$Relative_Frequency, "%")
             relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
             print.noquote(relative, row.names = FALSE)
-            data.frame(relative)
-            return(relative)
+            
 
             
             if(ivplot == TRUE){
@@ -192,6 +191,7 @@ pcqm.method <- function(x,
                        cglcol="grey", cglty=1, axislabcol="black", seg=5, caxislabels=seq(0,100,20), cglwd=0.8)
             legend(.65, .8, legend = speclist, col=colors_in, title = "Species", seg.len = 2,  pch = 16, lwd=4,lty = 1, bty="n",box.col="grey")
             }
+  return(relative)
 }
 
 
