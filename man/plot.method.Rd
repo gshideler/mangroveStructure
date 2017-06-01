@@ -6,7 +6,7 @@
 \usage{
 plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
   species = "species", height = "height", plot.width = 10,
-  plot.length = 10, ivplot = FALSE)
+  plot.length = 10)
 }
 \arguments{
 \item{plotnumber}{Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.}
@@ -21,14 +21,13 @@ plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
 
 \item{plot.length}{Plot length measured in meters. Default is 10 meters.}
 
-\item{ivplot}{Logical argument for whether a radar plot of species importance values is displayed. If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.}
 }
 \description{
-This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM). See Cottam and Curtis (1956) for informaiton on PCQM.
+This function allows you to estimate mangrove forest structure based on sampling using the plot method. 
 }
 \examples{
 plot.method(mangrove_data)
-plot.method(mangrove_data, species="Species", plot.width=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height", ivplot=T)
+plot.method(mangrove_data, species="Species", plot.width=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
 }
 \keyword{mangrove}
 \keyword{plot}
