@@ -23,7 +23,7 @@ plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
 
 }
 \description{
-This function allows you to estimate mangrove forest structure based on sampling using the plot method. 
+This function allows you to estimate mangrove forest structure based on sampling using fixed-area sampling (plot).
 }
 \examples{
 plot.method(mangrove_data)
