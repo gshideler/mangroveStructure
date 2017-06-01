@@ -155,11 +155,12 @@ pcqm.method <- function(x,
             compare <- compare[order(compare$Species),]
             myvars <- c("Species", "Relative_Density", "Relative_Dominance", "Relative_Frequency", "Importance_Value", "Rank")
             relative <- compare[myvars]
+            output <- relative
             relative$Relative_Density <- paste(relative$Relative_Density, "%")
             relative$Relative_Frequency <- paste(relative$Relative_Frequency, "%")
             relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
             print.noquote(relative, row.names = FALSE)
-            return(compare)
+            return(output)
            
   
 }
