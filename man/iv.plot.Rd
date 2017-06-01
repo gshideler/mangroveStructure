@@ -2,7 +2,7 @@
 % Please edit documentation in R/iv.plot.R
 \name{iv.plot}
 \alias{iv.plot}
-\title{Importance Value Plot for Mangrove PCQM or Plot Data}
+\title{Importance Value Radar Plot for Mangrove PCQM or Plot Data}
 \usage{
 iv.plot(x, colors = NULL)
 }
