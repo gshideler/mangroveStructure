@@ -1,4 +1,4 @@
-#' Importance Value Plot for Mangrove PCQM or Plot Data
+#' Importance Value Radar Plot for Mangrove PCQM or Plot Data
 #'
 #' This function allows you to output a radar plot for objects created from pcqm.method() or plot.method().
 #' @param colors Optional list of colors to be used in the radar plot. Maximum of five species will be plotted. If listed, one color must be provided for each species. If not specified, default colors will be used (red, black, blue, orange, green).
