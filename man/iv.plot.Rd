@@ -7,6 +7,8 @@
 iv.plot(x, colors = NULL)
 }
 \arguments{
+\item{x}{Data frame object output from the pcqm.method() or plot.method() functions.}
+
 \item{colors}{Optional list of colors to be used in the radar plot. Maximum of five species will be plotted. If listed, one color must be provided for each species. If not specified, default colors will be used (red, black, blue, orange, green).}
 
 }
