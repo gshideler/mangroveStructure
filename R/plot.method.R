@@ -7,11 +7,10 @@
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param plot.width Plot width measured in meters. Default is 10 meters.
 #' @param plot.length Plot length measured in meters. Default is 10 meters.
-#' @param ivplot Logical argument for whether a radar plot of species importance values is displayed. If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.
 #' @keywords mangrove structure, plot
 #' @examples
 #' plot.method(mangrove_data)
-#' plot.method(mangrove_data, species="Species", plot.width=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height", ivplot=T)
+#' plot.method(mangrove_data, species="Species", plot.width=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
 #' @export
 
 # Function to analyze forest data using the Plot Method
@@ -21,8 +20,7 @@ plot.method<-function(x,
                       species = 'species',
                       height = 'height',
                       plot.width=10,
-                      plot.length=10,
-                      ivplot = FALSE){
+                      plot.length=10){
   
   #Confirm it is a data frame
   x <- as.data.frame(x)
