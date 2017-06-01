@@ -5,7 +5,7 @@
 \title{Mangrove Point-Centered Quarter Method Analysis}
 \usage{
 pcqm.method(x, samplingpoint = "samplingpoint", dist = "dist",
-  species = "species", dbh = "dbh", height = "height", ivplot = F)
+  species = "species", dbh = "dbh", height = "height")
 }
 \arguments{
 \item{samplingpoint}{Column name in data frame for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.}
@@ -18,14 +18,13 @@ pcqm.method(x, samplingpoint = "samplingpoint", dist = "dist",
 
 \item{height}{Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.}
 
-\item{ivplot}{Logical argument for whether a radar plot of species importance values is displayed (Default is FALSE). If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.}
 }
 \description{
 This function allows you to estimate mangrove forest structure based on sampling using the Point-Centered Quarter Method (PCQM). See Cottam and Curtis (1956) for informaiton on PCQM.
 }
 \examples{
 pcqm.method(mangrove_data)
-pcqm.method(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", ivplot = T)
+pcqm.method(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point")
 }
 \keyword{mangrove}
 \keyword{pcqm}
