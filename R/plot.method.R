@@ -1,6 +1,6 @@
 #' Mangrove Plot Method Analysis
 #'
-#' This function allows you to estimate mangrove forest structure based on sampling using the plot method.
+#' This function allows you to estimate mangrove forest structure based on sampling using fixed-area sampling (plot).
 #' @param plotnumber Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param species Column name in data frame for species. Default name is "species".
