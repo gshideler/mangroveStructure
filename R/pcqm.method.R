@@ -6,11 +6,10 @@
 #' @param species Column name in data frame for species. Default name is "species".
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
-#' @param ivplot Logical argument for whether a radar plot of species importance values is displayed (Default is FALSE). If ivplot=TRUE, the top five species (ranked by importance values) will be plotted via radarchart() from package 'fmsb'.
 #' @keywords mangrove structure, pcqm
 #' @examples
 #' pcqm.method(mangrove_data)
-#' pcqm.method(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", ivplot = T)
+#' pcqm.method(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point")
 #' @export
 
 # Function to analyze forest data using the Point-Centered Quarter Method
@@ -19,8 +18,7 @@ pcqm.method <- function(x,
                  dist = 'dist',
                  species = 'species',
                  dbh = 'dbh',
-                 height = 'height',
-                 ivplot = F){
+                 height = 'height'){
   
    #Confirm it is a data frame
   x <- as.data.frame(x)
