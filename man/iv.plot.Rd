@@ -23,4 +23,3 @@ iv.plot(data_output, colors = c("black" , "gray", "goldenrod1", "lightgreen", "r
 \keyword{mangrove}
 \keyword{pcqm,}
 \keyword{structure,}
-Contact GitHub API Training Shop Blog About
