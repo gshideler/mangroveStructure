@@ -56,7 +56,7 @@ canopy.profile<-function(x,
   # RUN if interval has unique distances
    else{
     x$Interval <- x[,interval]
-    plotcan <- ddply(x, "samplingpoint", summarize, Avg_Height = mean(height), SD = sd(height), Interval=max(interval), SamplingPoint=0)
+    plotcan <- plyr::ddply(x, "samplingpoint", summarize, Avg_Height = mean(height), SD = sd(height), Interval=max(interval), SamplingPoint=0)
     for (i in 1:nrow(plotcan)) {
       ifelse(plotcan$samplingpoint[i]==1, plotcan$SamplingPoint[i]<-0, plotcan$SamplingPoint[i] <- plotcan$Interval[i] + plotcan$SamplingPoint[i-1])
       }
