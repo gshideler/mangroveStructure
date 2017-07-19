@@ -7,11 +7,11 @@
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param plot.width Plot width measured in meters. Default is 10 meters.
 #' @param plot.length Plot length measured in meters. Default is 10 meters.
-#' @param ageplot Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
+#' @param agebin Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
 #' @keywords mangrove structure, plot, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
 #' plot.indices(mangrove_data)
-#' plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.width = 5, ageplot=T)
+#' plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.width = 5, agebin=T)
 #' @export
 
 # Function to obtain Plot Method Indices
@@ -22,7 +22,7 @@ plot.indices <- function(x,
                          height = 'height',
                          plot.width=10,
                          plot.length=10, 
-                         ageplot=F){
+                         agebin=F){
                            
                          #Confirm it is a data frame
                          x <- as.data.frame(x)
@@ -87,7 +87,7 @@ plot.indices <- function(x,
   cat(" Mean Stand Diameter\n -----\n")
   cat(paste(" ", MSD))
   
-  if(ageplot==T){
+  if(agebin==T){
     # Plot of forest size class proportions
     x$size <- "Seedling"
     x$size[x$dbh >=2.5 & x$dbh<=10] <- "Sapling"
