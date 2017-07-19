@@ -6,11 +6,11 @@
 #' @param species Column name in data frame for species. Default name is "species".
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
-#' @param ageplot Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
+#' @param agebin Logical argument for displaying size class plot (Default is FALSE). If agebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
 #' @keywords mangrove structure, pcqm, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
 #' pcqm.indices(mangrove_data)
-#' pcqm.indices(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", ageplot = T)
+#' pcqm.indices(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", agebin = T)
 #' @export
 pcqm.indices <- function(x, 
                          samplingpoint = 'samplingpoint',
@@ -18,7 +18,7 @@ pcqm.indices <- function(x,
                          species = 'species',
                          dbh = 'dbh',
                          height = 'height',
-                         ageplot = F){
+                         agebin = F){
   
   #Confirm it is a data frame
   x <- as.data.frame(x)
@@ -80,7 +80,7 @@ pcqm.indices <- function(x,
   cat(" Mean Stand Diameter\n -----\n")
   cat(paste(" ", MSD))
  
-  if(ageplot==T){
+  if(agebin==T){
     # Plot of forest size class proportions
     x$size <- "Seedling"
     x$size[x$dbh >=5 & x$dbh<=10] <- "Sapling"
