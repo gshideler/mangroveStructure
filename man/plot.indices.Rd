@@ -6,7 +6,7 @@
 \usage{
 plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
   species = "species", height = "height", plot.width = 10,
-  plot.length = 10, ageplot = F)
+  plot.length = 10, agebin = F)
 }
 \arguments{
 \item{plotnumber}{Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.}
@@ -21,14 +21,14 @@ plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
 
 \item{plot.length}{Plot length measured in meters. Default is 10 meters.}
 
-\item{ageplot}{Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).}
+\item{agebin}{Logical argument for displaying size class plot (Default is FALSE). If agebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).}
 }
 \description{
 This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
 }
 \examples{
 plot.indices(mangrove_data)
-plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.width = 5, ageplot=T)
+plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.width = 5, agebin=T)
 }
 \keyword{Complexity}
 \keyword{Diameter}
