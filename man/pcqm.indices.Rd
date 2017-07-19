@@ -5,7 +5,7 @@
 \title{Mangrove Indices for Point-Centered Quarter Method}
 \usage{
 pcqm.indices(x, samplingpoint = "samplingpoint", dist = "dist",
-  species = "species", dbh = "dbh", height = "height", ageplot = F)
+  species = "species", dbh = "dbh", height = "height", agebin = F)
 }
 \arguments{
 \item{samplingpoint}{Column name in data frame for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.}
@@ -18,14 +18,14 @@ pcqm.indices(x, samplingpoint = "samplingpoint", dist = "dist",
 
 \item{height}{Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.}
 
-\item{ageplot}{Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).}
+\item{agebin}{Logical argument for displaying size class plot (Default is FALSE). If agebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).}
 }
 \description{
 This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
 }
 \examples{
 pcqm.indices(mangrove_data)
-pcqm.indices(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", ageplot = T)
+pcqm.indices(mangrove_data, dbh = "Diameter", height = "Tree_Height", samplingpoint = "Sampling_Point", agebin = T)
 }
 \keyword{Complexity}
 \keyword{Diameter}
