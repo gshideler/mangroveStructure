@@ -7,7 +7,7 @@
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
 #' @param plot.width Plot width measured in meters. Default is 10 meters.
 #' @param plot.length Plot length measured in meters. Default is 10 meters.
-#' @param agebin Logical argument for displaying size class plot (Default is FALSE). If ageplot=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
+#' @param agebin Logical argument for displaying size class plot (Default is FALSE). If agebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
 #' @keywords mangrove structure, plot, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
 #' plot.indices(mangrove_data)
