@@ -17,6 +17,8 @@ canopy.profile(x, samplingpoint = "samplingpoint", height = "height",
 \item{interval}{Column name for the distances between sampling points (required if interval10=FALSE). Default name is "interval". The first row (samplingpoint 1) must be a value of 0. Each successive sampling point number represents the distance from the previous sampling point, NOT the additive distance from sampling point 1.}
 
 \item{ymax}{Optional argument for specifying the maximum extent of the y axis. If not specified (Default), ymax is estimated based on dataframe values.}
+
+\item{xmax}{Optional argument for specifying the maximum extent of the x axis. If not specified (Default), xmax is estimated based on dataframe values.}                                                                       
 }
 \description{
 This function allows you to plot the canopy profile for mangrove forest transects from pcqm data.
