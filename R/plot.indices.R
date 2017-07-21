@@ -88,13 +88,13 @@ plot.indices <- function(x,
   cat(paste(" ", MSD))
   
   if(agebin==T){
-    # Plot of forest size class proportions
-    x$size <- "Seedling"
-    x$size[x$dbh >=2.5 & x$dbh<=10] <- "Sapling"
-    x$size[x$dbh > 10] <- "Pole"
-    x$sizefac <- factor(x$size, levels= c("Seedling", "Sapling", "Pole"))
+    # Plot of forest diameter bin proportions
+    x$size <- "<5 cm"
+    x$size[x$dbh >=5 & x$dbh<=10] <- "5–10 cm"
+    x$size[x$dbh > 10] <- ">10 cm"
+    x$sizefac <- factor(x$size, levels= c("<5 cm", "5–10 cm", ">10 cm"))
     plotsize <- table(x$sizefac)
-    barplot(plotsize / sum(plotsize), ylab="Proportion of forest trees", xlab="Tree size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
+    barplot(plotsize / sum(plotsize), ylab="Proportion of forest trees", xlab="Tree diameter bin", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
     
   }
 }
