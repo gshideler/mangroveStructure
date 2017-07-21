@@ -81,10 +81,10 @@ plot.method<-function(x,
   # Print height metrics
   if("height" %in% colnames(x)) cat("\n\n HEIGHT METRICS\n -----\n")
   if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
-  if("height" %in% colnames(x)) cat(paste("\n\n Canopy height =", canopy))
+  if("height" %in% colnames(x)) cat(paste("Canopy height =", canopy))
             
   # Print DBH metrics
-  cat("\n DBH METRICS\n -----\n")
+  cat("\n\n DBH METRICS\n -----\n")
   print.noquote(species_dbh_output, row.names = FALSE)
   
   # Density summaries
