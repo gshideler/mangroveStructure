@@ -46,8 +46,8 @@ pcqm.method <- function(x,
   spcount <- length(unique(x$Species))
   
   # Get height of trees, with mean, min, max; and of three tallest trees for canopy height
-  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, Trees = length(height), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Minimum = min(height), Maximum= max(height))
-  if("height" %in% colnames(x)) height_totals <- data.frame(Species = "Total", Trees = length(x$height), Mean = round(mean(x$height), digits=2), SD = round(sd(x$height), digits=2), Minimum = min(x$height), Maximum = max(x$height))
+  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, Count = length(height), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Minimum = min(height), Maximum= max(height))
+  if("height" %in% colnames(x)) height_totals <- data.frame(Species = "Total", Count = length(x$height), Mean = round(mean(x$height), digits=2), SD = round(sd(x$height), digits=2), Minimum = min(x$height), Maximum = max(x$height))
   if("height" %in% colnames(x)) species_height_output <- rbind(species_height, height_totals) 
   
   # Canopy height
@@ -56,13 +56,9 @@ pcqm.method <- function(x,
   if("height" %in% colnames(x)) canopy <- round(mean(x2$height), digits=2)
   
   # Get DBH of trees, with mean, min, max
-  avgdbh <- round(mean(x$dbh), digits=2)
-  sddbh <- round(sd(x$dbh), digits=2)
-  dbhmin <- min(x$dbh)
-  dbhmax <- max(x$dbh)
-  species_dbh <- plyr::ddply(x, "Species", summarize, n = length(dbh), Mean = round(mean(dbh), digits=2), SD = round(sd(dbh), digits=2), Min = min(dbh), Max = max(dbh))                                                        
-  
-  
+  species_dbh <- plyr::ddply(x, "Species", summarize, Count = length(dbh), Mean = round(mean(dbh), digits=2), SD = round(sd(dbh), digits=2), Minimum = min(dbh), Maximum = max(dbh))                                                        
+  dbh_totals <- data.frame(Species = "Total", Count = length(x$dbh), Mean = round(mean(x$dbh), digits=2), SD = round(sd(x$dbh), digits=2), Minimum = min(x$dbh), Maximum = max(x$dbh))
+  species_dbh_output <- rbind(species_dbh, dbh_totals) 
   
             # Distance summaries
             Mdistance <- round(mean(x$Distance),digits=2)
@@ -81,18 +77,12 @@ pcqm.method <- function(x,
             cat(paste(",   Mean distance =", Mdistance))
             
             # Print height metrics
-            if("height" %in% colnames(x)) cat(paste("\n\n Height metrics:", "\n -----\n"))
+            if("height" %in% colnames(x)) cat(paste("\n\n HEIGHT metrics:", "\n -----\n"))
             if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
             
             # Print DBH metrics
-            cat(paste("\n\n DBH metrics:"))
-            cat(paste("\n Mean DBH =", avgdbh, "("))
-            cat(paste("SD", sddbh))
-            cat(paste(")"))
-            cat(paste("\n Min DBH =", dbhmin))
-            cat(paste(",   Max DBH =", dbhmax))
-            cat(paste("\n\n Species-level dbh metrics:", "\n -----\n"))
-            print.noquote(species_dbh, row.names = FALSE)
+            cat(paste("\n\n DBH METRICS:", "\n -----\n"))
+            print.noquote(species_dbh_output, row.names = FALSE)
 
 
             # Calculate and print density summaries
