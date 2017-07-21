@@ -78,23 +78,14 @@ plot.method<-function(x,
   cat(paste("\n Area of each plot =", area, "m^2"))
   cat(paste(",   Sum of all plot areas =", max(x$areasum), "m^2"))
   
-  # Height metrics
-  if("height" %in% colnames(x)) cat(paste("\n\n Height metrics:"))
-  if("height" %in% colnames(x)) cat(paste("\n Canopy height =", canopy))
-  if("height" %in% colnames(x)) cat(paste(",   Mean tree height =", avgheight, "("))
-  if("height" %in% colnames(x)) cat(paste("SD", sdheight))
-  if("height" %in% colnames(x)) cat(paste(")"))
-  if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
-  if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
-  
-  # DBH metrics
-  cat(paste("\n\n DBH metrics:"))
-  cat(paste("\n Mean DBH =", avgdbh, "("))
-  cat(paste("SD", sddbh))
-  cat(paste(")"))
-  cat(paste("\n Min DBH =", dbhmin))
-  cat(paste(",   Max DBH =", dbhmax))
-  cat("\n")
+  # Print height metrics
+  if("height" %in% colnames(x)) cat("\n\n HEIGHT METRICS\n -----\n")
+  if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
+  if("height" %in% colnames(x)) cat(paste("\n\n Canopy height =", canopy))
+            
+  # Print DBH metrics
+  cat("\n DBH METRICS\n -----\n")
+  print.noquote(species_dbh_output, row.names = FALSE)
   
   # Density summaries
   cat("\n DENSITY COMPUTATION\n -----\n")
