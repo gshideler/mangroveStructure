@@ -46,7 +46,7 @@ pcqm.method <- function(x,
   spcount <- length(unique(x$Species))
   
   # Get height of trees, with mean, min, max; and of three tallest trees for canopy height
-  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, sample_size = length(height), Mean_height = round(mean(height), digits=2), SD = round(sd(height), digits=2), Min_height = min(height), Max_height= max(height))
+  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, Trees = length(height), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Minimum = min(height), Maximum= max(height))
   if("height" %in% colnames(x)) height_totals <- data.frame(Species = "Total", sample_size = length(x$height), Mean_height = round(mean(x$height), digits=2), SD = round(sd(x$height), digits=2), Min_height = min(x$height), Max_height = max(x$height))
   if("height" %in% colnames(x)) species_height_output <- rbind(species_height, height_totals) 
   
