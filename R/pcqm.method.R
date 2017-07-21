@@ -81,14 +81,7 @@ pcqm.method <- function(x,
             cat(paste(",   Mean distance =", Mdistance))
             
             # Print height metrics
-            if("height" %in% colnames(x)) cat(paste("\n\n Height metrics:"))
-            if("height" %in% colnames(x)) cat(paste("\n Canopy height =", canopy))
-            if("height" %in% colnames(x)) cat(paste(",   Mean tree height =", avgheight, "("))
-            if("height" %in% colnames(x)) cat(paste("SD", sdheight))
-            if("height" %in% colnames(x)) cat(paste(")"))
-            if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
-            if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
-            if("height" %in% colnames(x)) cat(paste("\n\n Species-level height metrics:", "\n -----\n"))
+            if("height" %in% colnames(x)) cat(paste("\n\n Height metrics:", "\n -----\n"))
             if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
             
             # Print DBH metrics
