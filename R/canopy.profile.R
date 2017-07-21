@@ -45,7 +45,7 @@ canopy.profile<-function(x,
             }
     else{
       plotcan <- plyr::ddply(x, "SamplingPoint", summarize, Avg_Height = mean(height), SD = sd(height))
-      plotcan$SD[plotcan$SD == 0] <- 0.00000001
+      plotcan[, 3][plotcan[, 3] == 0] <- 0.00000001
       plotcan$SamplingPoint <- (plotcan$SamplingPoint*10)-10
       plot(plotcan$SamplingPoint, plotcan$Avg_Height, pch=20, ylab="Mean canopy height (SD)", xlab="Distance from starting point",ylim=range((c(0, Max))))
       lines(plotcan$SamplingPoint, plotcan$Avg_Height)
@@ -60,7 +60,7 @@ canopy.profile<-function(x,
     for (i in 1:nrow(plotcan)) {
       ifelse(plotcan$samplingpoint[i]==1, plotcan$SamplingPoint[i]<-0, plotcan$SamplingPoint[i] <- plotcan$Interval[i] + plotcan$SamplingPoint[i-1])
       }
-    plotcan$SD[plotcan$SD == 0] <- 0.00000001
+    plotcan[, 3][plotcan[, 3] == 0] <- 0.00000001
     plot(plotcan$SamplingPoint, plotcan$Avg_Height, pch=20, ylab="Mean canopy height (SD)", xlab="Distance from starting point", ylim=range((c(0, Max))))
     lines(plotcan$SamplingPoint, plotcan$Avg_Height)
     arrows(plotcan$SamplingPoint, plotcan$Avg_Height-plotcan$SD, plotcan$SamplingPoint, plotcan$Avg_Height+plotcan$SD, length=0.05, angle=90, code=3)
