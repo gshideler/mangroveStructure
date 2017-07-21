@@ -46,13 +46,9 @@ pcqm.method <- function(x,
   spcount <- length(unique(x$Species))
   
   # Get height of trees, with mean, min, max; and of three tallest trees for canopy height
-  if("height" %in% colnames(x)) avgheight <- round(mean(x$height), digits=2)
-  if("height" %in% colnames(x)) sdheight <- round(sd(x$height), digits=2)
-  if("height" %in% colnames(x)) heightmin <- min(x$height)
-  if("height" %in% colnames(x)) heightmax <- max(x$height)
-  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, n = length(height), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Min = min(height), Max = max(height))
-  if("height" %in% colnames(x)) total_height <- c("Total", length(x$height), round(mean(x$height), digits=2), round(sd(x$height), digits=2), min(x$height), max(x$height))
-  if("height" %in% colnames(x)) species_height <- rbind(species_height, total_height) 
+  if("height" %in% colnames(x)) species_height <- ddply(x, "Species", summarize, n = length(height), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Min = min(height), Max = max(height))
+  if("height" %in% colnames(x)) height_totals <- data.frame(Species = "Total", n = length(x$height), Mean = round(mean(x$height), digits=2), SD = round(sd(x$height), digits=2), Min = min(x$height), Max = max(x$height))
+  if("height" %in% colnames(x)) species_height_output <- rbind(species_height, height_totals) 
   
   # Canopy height
   if("height" %in% colnames(x)) x <- x[order(-x$height),]
@@ -93,7 +89,7 @@ pcqm.method <- function(x,
             if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
             if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
             if("height" %in% colnames(x)) cat(paste("\n\n Species-level height metrics:", "\n -----\n"))
-            if("height" %in% colnames(x)) print.noquote(species_height, row.names = FALSE)
+            if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
             
             # Print DBH metrics
             cat(paste("\n\n DBH metrics:"))
