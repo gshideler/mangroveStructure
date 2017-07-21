@@ -90,7 +90,7 @@ pcqm.method <- function(x,
             if("height" %in% colnames(x)) cat(paste(")"))
             if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
             if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
-            if("height" %in% colnames(x)) cat("\n\n Species-level height metrics:")
+            if("height" %in% colnames(x)) cat(paste("\n\n Species-level height metrics:", "\n -----\n"))
             if("height" %in% colnames(x)) print.noquote(species_height, row.names = FALSE)
             
             # Print DBH metrics
@@ -100,7 +100,7 @@ pcqm.method <- function(x,
             cat(paste(")"))
             cat(paste("\n Min DBH =", dbhmin))
             cat(paste(",   Max DBH =", dbhmax))
-            cat("\n\n Species-level dbh metrics:")
+            cat(paste("\n\n Species-level dbh metrics:", "\n -----\n"))
             print.noquote(species_dbh, row.names = FALSE)
 
 
