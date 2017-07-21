@@ -5,7 +5,7 @@
 \title{Mangrove Canopy Profile for Point-Centered Quarter Method}
 \usage{
 canopy.profile(x, samplingpoint = "samplingpoint", height = "height",
-  interval10 = TRUE, interval = "interval", ymax = NULL)
+  interval10 = TRUE, interval = "interval", ymax = NULL, xmax = NULL)
 }
 \arguments{
 \item{samplingpoint}{Column name for sampling points (numerical). Default name is "samplingpoint". First sampling point must be 1.}
