@@ -50,6 +50,7 @@ pcqm.method <- function(x,
   if("height" %in% colnames(x)) sdheight <- round(sd(x$height), digits=2)
   if("height" %in% colnames(x)) heightmin <- min(x$height)
   if("height" %in% colnames(x)) heightmax <- max(x$height)
+  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, Mean = round(mean(x$height), digits=2), SD = round(sd(x$height), digits=2, Min = min(x$height), Max = max(x$height))
   
   # Canopy height
   if("height" %in% colnames(x)) x <- x[order(-x$height),]
@@ -61,6 +62,7 @@ pcqm.method <- function(x,
   sddbh <- round(sd(x$dbh), digits=2)
   dbhmin <- min(x$dbh)
   dbhmax <- max(x$dbh)
+  species_dbh <- plyr::ddply(x, "Species", summarize, Mean = round(mean(x$dbh), digits=2), SD = round(sd(x$dbh), digits=2, Min = min(x$dbh), Max = max(x$dbh))                                                        
   
   
   
@@ -88,6 +90,8 @@ pcqm.method <- function(x,
             if("height" %in% colnames(x)) cat(paste(")"))
             if("height" %in% colnames(x)) cat(paste("\n Min height =", heightmin))
             if("height" %in% colnames(x)) cat(paste(",   Max height =", heightmax))
+            if("height" %in% colnames(x)) cat(paste("\n\n Species-level height metrics:"))
+            if("height" %in% colnames(x)) print.noquote(species_height, row.names = FALSE)
             
             # Print DBH metrics
             cat(paste("\n\n DBH metrics:"))
@@ -96,11 +100,12 @@ pcqm.method <- function(x,
             cat(paste(")"))
             cat(paste("\n Min DBH =", dbhmin))
             cat(paste(",   Max DBH =", dbhmax))
-            cat("\n")
+            cat(paste("\n\n Species-level dbh metrics:"))
+            print.noquote(species_dbh, row.names = FALSE)
 
 
             # Calculate and print density summaries
-            cat("\n DENSITY COMPUTATION\n -----\n")
+            cat("\n\n DENSITY COMPUTATION\n -----\n")
             x$static <- 1
             densum <- plyr::ddply(x, "static", transform, sum.n = max(count), meandist= mean(Distance), stemcalc=round((1/(mean(Distance)^2))*1000, digits=1))
             densum1 <- plyr::ddply(densum, "Species", summarize, Number = length(static), Proportion = round(length(static) / max(sum.n), digits=2), stemcalc=max(stemcalc))
