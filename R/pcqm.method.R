@@ -50,7 +50,7 @@ pcqm.method <- function(x,
   if("height" %in% colnames(x)) sdheight <- round(sd(x$height), digits=2)
   if("height" %in% colnames(x)) heightmin <- min(x$height)
   if("height" %in% colnames(x)) heightmax <- max(x$height)
-  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Min = min(height), Max = max(height))
+  if("height" %in% colnames(x)) species_height <- plyr::ddply(x, "Species", summarize, n = length(SamplingPoints), Mean = round(mean(height), digits=2), SD = round(sd(height), digits=2), Min = min(height), Max = max(height))
   
   # Canopy height
   if("height" %in% colnames(x)) x <- x[order(-x$height),]
