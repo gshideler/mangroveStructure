@@ -86,7 +86,7 @@ pcqm.method <- function(x,
 
 
             # Calculate and print density summaries
-            cat("\n DENSITY COMPUTATION\n -----\n")
+            cat("\n\n DENSITY COMPUTATION\n -----\n")
             x$static <- 1
             densum <- plyr::ddply(x, "static", transform, sum.n = max(count), meandist= mean(Distance), stemcalc=round((1/(mean(Distance)^2))*1000, digits=1))
             densum1 <- plyr::ddply(densum, "Species", summarize, Number = length(static), Proportion = round(length(static) / max(sum.n), digits=2), stemcalc=max(stemcalc))
