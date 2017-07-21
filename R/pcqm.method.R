@@ -77,7 +77,7 @@ pcqm.method <- function(x,
             cat(paste(",   Mean distance =", Mdistance))
             
             # Print height metrics
-            if("height" %in% colnames(x)) cat(paste("\n\n HEIGHT metrics:", "\n -----\n"))
+            if("height" %in% colnames(x)) cat(paste("\n\n HEIGHT METRICS:", "\n -----\n"))
             if("height" %in% colnames(x)) print.noquote(species_height_output, row.names = FALSE)
             
             # Print DBH metrics
