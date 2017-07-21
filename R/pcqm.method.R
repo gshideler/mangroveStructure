@@ -97,7 +97,7 @@ pcqm.method <- function(x,
             cat(paste(" Total density per 0.1 ha =", sum(densum2$Stems_Per_0.1_Ha)))
 
             # Calculate and print basal area summaries
-            cat("\n BASAL AREA COMPUTATION\n -----\n")
+            cat("\n\n BASAL AREA COMPUTATION\n -----\n")
             densum$BA <- (3.14159265359 * (densum$dbh/2) ^ 2) / 10000
             densumBA <- plyr::ddply(densum, "Species", summarize, MeanBA = round(mean(BA), digits=4))
             densumBA <- plyr::join(densum2, densumBA, by="Species")
