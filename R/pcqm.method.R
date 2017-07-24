@@ -149,7 +149,7 @@ pcqm.method <- function(x,
             return(output)
            
             #Warning if sampling points are missing quarters
-            if(rows / points != 4) warning("Sampling points missing quarters. Results may not be reliable.")
+            if(rows / points != 4.00) warning("Sampling points missing quarters. Results may not be reliable.")
   
 }
 
