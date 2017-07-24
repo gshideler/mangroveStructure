@@ -65,7 +65,7 @@ pcqm.method <- function(x,
             Tdistance <- round(sum(x$Distance), digits=2)
             x$count <- 1:nrow(x)
             rows <- max(x$count)
-            
+             
             # Print header outputs
             cat("\n ---------------------------------------------------")
             cat("\n Point-Centered Quarter Method data analysis summary")
@@ -146,6 +146,8 @@ pcqm.method <- function(x,
             print.noquote(relative, row.names = FALSE)
             return(output)
            
+            #Warning if sampling points are missing quarters
+            if(rows / length(unique(x$SamplingPoint) != 4) warning("Sampling points missing quarters. Results may not be reliable.")
   
 }
 
