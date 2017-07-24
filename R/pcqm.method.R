@@ -146,11 +146,11 @@ pcqm.method <- function(x,
             relative$Relative_Frequency <- paste(relative$Relative_Frequency, "%")
             relative$Relative_Dominance <- paste(relative$Relative_Dominance, "%")
             print.noquote(relative, row.names = FALSE)
-            return(output)
-           
+                       
             #Warning if sampling points are missing quarters
-            if(round(rows / points), digits=5) != 4.0000) warning("Sampling points missing quarters. Results may not be reliable.")
-  
+            if(round(rows / points), digits=5) != 4.00000) warning("Sampling points missing quarters. Results may not be reliable.")
+            
+            return(output)
 }
 
 
