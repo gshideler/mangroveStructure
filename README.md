@@ -54,7 +54,7 @@ pcqm_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/m
  
 r1 <- pcqm.method(pcqm_data)
 iv.plot(r1)
-pcqm.indices(pcqm_data, agebin=TRUE)
+pcqm.indices(pcqm_data, sizebin=TRUE)
 canopy.profile(pcqm_data)
 ```
 If your column names are different from the defaults, you can specify them using the appropriate argument. See package help files for more information and for all defaults. This applies to all functions in the package.
@@ -70,7 +70,7 @@ plot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/m
 
 r2 <- plot.method(plot_data)
 iv.plot(r2, colors = c("black", "firebrick1", "gray"))
-plot.indices(plot_data, agebin=TRUE)
+plot.indices(plot_data, sizebin=TRUE)
 ```
 
 ----
