@@ -64,6 +64,7 @@ pcqm.method <- function(x,
             Mdistance <- round(mean(x$Distance),digits=2)
             Tdistance <- round(sum(x$Distance), digits=2)
             x$count <- 1:nrow(x)
+  
             rows <- max(x$count)
             points <- length(unique(x$SamplingPoint))
              
