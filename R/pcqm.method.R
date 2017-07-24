@@ -65,6 +65,7 @@ pcqm.method <- function(x,
             Tdistance <- round(sum(x$Distance), digits=2)
             x$count <- 1:nrow(x)
             rows <- max(x$count)
+            points <- length(unique(x$SamplingPoint)))
              
             # Print header outputs
             cat("\n ---------------------------------------------------")
@@ -147,7 +148,7 @@ pcqm.method <- function(x,
             return(output)
            
             #Warning if sampling points are missing quarters
-            if(rows / length(unique(x$SamplingPoint)) != 4) warning("Sampling points missing quarters. Results may not be reliable.")
+            if(rows / points != 4) warning("Sampling points missing quarters. Results may not be reliable.")
   
 }
 
