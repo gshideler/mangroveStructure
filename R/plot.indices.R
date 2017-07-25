@@ -107,7 +107,7 @@ plot.indices <- function(x,
   
     #Scatterplot of dbh vs height
      plot(x$dbh, x$height, pch=21, xlab="Tree DBH (cm)", ylab="Tree Height (m)", cex.lab = 1.2, cex.axis = 1.1, col="black", bg = c("snow", "gray75", "black")[x$sizefac], ylim=c(0,max(x$height)+1), xlim=c(0,max(x$dbh)+1), yaxs="i", xaxs="i")
-     legend("bottomright",legend=c("<5 cm dbh","5-10 cm dbh",">10 cm dbh"),pch=c(21,21,21),col = "black", pt.bg = c("snow", "gray75", "black"), cex=1.2, pt.cex=1.2, title="DBH Class")
+     legend("bottomright",legend=c("<5 cm dbh","5–10 cm dbh",">10 cm dbh"),pch=c(21,21,21),col = "black", pt.bg = c("snow", "gray75", "black"), cex=1.2, pt.cex=1.2, title="DBH Size Class")
   
   }
 }
