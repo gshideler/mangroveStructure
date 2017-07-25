@@ -6,7 +6,7 @@
 #' @param species Column name in data frame for species. Default name is "species".
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param height Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.
-#' @param sizebin Logical argument for displaying size class plot (Default is FALSE). If sizebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
+#' @param sizebin Logical argument for displaying size class plots (Default is FALSE). If sizebin=TRUE, plots of size class proportions are displayed for dbh (<5 cm dbh, 5–10 cm dbh, and >10 cm dbh) and height (<5 m, 5–10 m, and >10 m).
 #' @keywords mangrove structure, pcqm, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
 #' pcqm.indices(mangrove_data)
@@ -81,13 +81,22 @@ pcqm.indices <- function(x,
   cat(paste(" ", MSD))
  
   if(sizebin==T){
-    # Plot of forest diameter size class proportions
+    # Plot of dbh proportions
     x$size <- "<5 cm"
     x$size[x$dbh >=5 & x$dbh<=10] <- "5–10 cm"
     x$size[x$dbh > 10] <- ">10 cm"
     x$sizefac <- factor(x$size, levels= c("<5 cm", "5–10 cm", ">10 cm"))
     plotsize <- table(x$sizefac)
-    barplot(plotsize / sum(plotsize), ylab="Proportion of forest trees", xlab="Tree diameter size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
+    barplot(plotsize / sum(plotsize), ylab="Proportion of forest trees", xlab="Tree diameter size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("burlywood3", "tan3", "saddlebrown"))
+   
+    # Plot of height proportions
+    x$size2 <- "<5 m"
+    x$size2[x$height >=5 & x$height<=10] <- "5–10 m"
+    x$size2[x$height > 10] <- ">10 cm"
+    x$sizefac2 <- factor(x$size2, levels= c("<5 m", "5–10 m", ">10 m"))
+    plotsize2 <- table(x$sizefac2)
+    barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
+  
   }
   }
   
