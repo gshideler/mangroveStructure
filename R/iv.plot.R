@@ -51,6 +51,7 @@ iv.plot <- function(x, colors = NULL,
   speclist <- compare$legend
   
   # Plot radarChart
+  par(ask=FALSE)
   fmsb::radarchart(plotdata2, maxmin=TRUE,
                    axistype=1 , centerzero = TRUE, vlabels=c("Relative\ndominance (%)", "Relative\ndensity (%)", "Relative\nfrequency (%)"),
                    pcol=colors,  plwd=4 , plty=1, 
