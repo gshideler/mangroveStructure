@@ -78,7 +78,7 @@ pcqm.indices <- function(x,
   
   # Print output from MSD
   cat(" Mean Stand Diameter\n -----\n")
-  cat(paste(" ", MSD))
+  cat(paste(" ", MSD,"\n))
  
   if(sizebin==T){
     # Plot of dbh proportions
