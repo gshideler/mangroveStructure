@@ -47,7 +47,8 @@ iv.plot <- function(x, colors = NULL,
 
   }
   
-  speclist <- compare$Species
+  compare$legend <- paste(compare$Species, " (", compare$Importance_Value, ")")
+  speclist <- compare$legend
   
   # Plot radarChart
   fmsb::radarchart(plotdata2, maxmin=TRUE,
