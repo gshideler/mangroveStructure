@@ -105,6 +105,9 @@ plot.indices <- function(x,
     plotsize2 <- table(x$sizefac2)
     barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
   
+    #Scatterplot of dbh vs height
+    plot(x$dbh, x$height, pch=16, xlab="Tree DBH", ylab="Tree Height", cex.lab = 1.2, cex.axis = 1.1, col = c("burlywood3", "tan3", "saddlebrown")[x$sizefac])
+
   }
 }
 
