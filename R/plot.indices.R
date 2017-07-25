@@ -83,11 +83,9 @@ plot.indices <- function(x,
   # Calculate Mean Stand Diameter
   MSD <- round(sqrt((totbas * 12732.39)/totden), digits=2)
   
-  # Print output from MSD
+    # Print output from MSD
   cat(" Mean Stand Diameter\n -----\n")
-  # Print output from MSD
-  cat(" Mean Stand Diameter\n -----\n")
-  cat(paste(" ", MSD,"\n"))
+  cat(paste(" ", MSD,"\n\n"))
  
   if(sizebin==T){
     # Plot of dbh proportions
