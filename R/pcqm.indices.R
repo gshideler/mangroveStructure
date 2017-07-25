@@ -69,7 +69,7 @@ pcqm.indices <- function(x,
   if("height" %in% colnames(x)) CI <- round((heightcalc * totbas * totden * spp) / 1000, digits=2)
   
   # Print the Output from HCI
-  if("height" %in% colnames(x)) cat(" Holdridge Complexity Index\n -----\n")
+  if("height" %in% colnames(x)) cat(" Complexity Index\n -----\n")
   if("height" %in% colnames(x)) cat(paste(" ", CI))
   if("height" %in% colnames(x)) cat("\n\n")
   
