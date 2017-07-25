@@ -87,7 +87,7 @@ plot.indices <- function(x,
   cat(" Mean Stand Diameter\n -----\n")
   # Print output from MSD
   cat(" Mean Stand Diameter\n -----\n")
-  cat(paste(" ", MSD,"\n))
+  cat(paste(" ", MSD,"\n"))
  
   if(sizebin==T){
     # Plot of dbh proportions
