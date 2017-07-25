@@ -100,7 +100,7 @@ pcqm.indices <- function(x,
   
     #Scatterplot of dbh vs height
     plot(x$dbh, x$height, pch=16, xlab="Tree DBH", ylab="Tree Height", cex.lab = 1.2, cex.axis = 1.1, col = c("burlywood3", "tan3", "saddlebrown")[x$size])
-    legend(x="topright", legend = levels(x$size), col=c("burlywood3", "tan3", "saddlebrown"), pch=16)
+    
   }
   }
   
