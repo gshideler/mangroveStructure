@@ -69,7 +69,7 @@ pcqm.method(pcqm_data, samplingpoint = "Sampling_Point", dbh = "Diameter")
 plot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/plot_data.csv"), header=TRUE)
 
 r2 <- plot.method(plot_data)
-iv.plot(r2, colors = c("black", "firebrick1", "gray"))
+iv.plot(r2, colors = c("black", "gray", "firebrick1"))
 plot.indices(plot_data, sizebin=TRUE)
 ```
 
