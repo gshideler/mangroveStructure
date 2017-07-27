@@ -21,7 +21,7 @@ plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
 
 \item{plot.length}{Plot length measured in meters. Default is 10 meters.}
 
-\item{sizebin}{Logical argument for displaying size class plot (Default is FALSE). If sizebin=TRUE, plot of size class proportions is displayed: <5 cm dbh, 5–10 cm dbh, and >10 cm dbh.}
+\item{sizebin}{Logical argument for displaying size class plot (Default is FALSE). If sizebin = TRUE, three graphs are generated: (1) an illustration of size class proportions: <5 cm, 5–10 cm, and >10 cm DBH; (2) an illustration of tree height size class proportions: <5, 5–10, and >10 m; and (3) a scatterplot of the relationship between DBH and height.}
 }
 \description{
 This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
