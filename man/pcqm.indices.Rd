@@ -18,7 +18,7 @@ pcqm.indices(x, samplingpoint = "samplingpoint", dist = "dist",
 
 \item{height}{Column name in data frame for height (Optional). Default name is "height". Values must be in meters. When included, additional height-related outputs are displayed.}
 
-\item{sizebin}{Logical argument for displaying size class plot (Default is FALSE). If sizebin = TRUE, three graphs are generated: (1) an illustration of size class proportions: <5 cm, 5–10 cm, and >10 cm DBH; (2) an illustration of tree height size class proportions: <5, 5–10, and >10 m; and (3) a scatterplot of the relationship between DBH and height.}
+\item{sizebin}{Logical argument for displaying size class plot (Default is FALSE). If sizebin = TRUE, three graphs are generated: (1) an illustration of diameter size class proportions: <5 cm, 5–10 cm, and >10 cm DBH; (2) an illustration of tree height size class proportions: <5, 5–10, and >10 m; and (3) a scatterplot of the relationship between DBH and height.}
 }
 \description{
 This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
