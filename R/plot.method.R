@@ -57,7 +57,7 @@ plot.method<-function(x,
   
   # Get DBH of trees, with mean, min, max
   species_dbh <- plyr::ddply(x, "Species", summarize, Count = length(dbh), Mean = round(mean(dbh), digits=2), SD = round(sd(dbh), digits=2), Minimum = min(dbh), Maximum = max(dbh))                                                        
-  dbh_totals <- data.frame(Species = "Total", Count = length(x$dbh), Mean = round(mean(x$dbh), digits=2), SD = round(sd(x$dbh), digits=2), Minimum = min(x$dbh), Maximum = max(x$dbh))
+  dbh_totals <- data.frame(Species = "Total", Number = length(x$dbh), Mean = round(mean(x$dbh), digits=2), SD = round(sd(x$dbh), digits=2), Minimum = min(x$dbh), Maximum = max(x$dbh))
   species_dbh_output <- rbind(species_dbh, dbh_totals) 
   
   # Plot calculations
