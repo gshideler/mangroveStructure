@@ -54,7 +54,8 @@ canopy.profile<-function(x,
       
       null_xMax <- max(plotcan$SamplingPoint)
       xMax <- if(is.null(xmax)) null_xMax else xmax
-        
+       
+      par(ask=FALSE)
       plot(plotcan$SamplingPoint, plotcan$Avg_Height, pch=20, ylab="Mean canopy height (SD)", xlab="Distance from starting point", ylim=range(c(0, yMax)), xlim=range(c(0, xMax)))
       lines(plotcan$SamplingPoint, plotcan$Avg_Height)
       arrows(plotcan$SamplingPoint, plotcan$Avg_Height-plotcan$SD, plotcan$SamplingPoint, plotcan$Avg_Height+plotcan$SD, length=0.05, angle=90, code=3)
@@ -73,6 +74,7 @@ canopy.profile<-function(x,
     xMax <- if(is.null(xmax)) null_xMax else xmax
       
     plotcan[, 3][plotcan[, 3] == 0] <- NA
+    par(ask=FALSE)
     plot(plotcan$SamplingPoint, plotcan$Avg_Height, pch=20, ylab="Mean canopy height (SD)", xlab="Distance from starting point", ylim=range(c(0, yMax)), xlim=range(c(0, xMax)))
     lines(plotcan$SamplingPoint, plotcan$Avg_Height)
     arrows(plotcan$SamplingPoint, plotcan$Avg_Height-plotcan$SD, plotcan$SamplingPoint, plotcan$Avg_Height+plotcan$SD, length=0.05, angle=90, code=3)
