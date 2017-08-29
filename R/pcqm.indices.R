@@ -93,7 +93,7 @@ pcqm.indices <- function(x,
     # Plot of height proportions
     x$size2 <- "<5 m"
     x$size2[x$height >=5 & x$height<=10] <- "5–10 m"
-    x$size2[x$height > 10] <- ">10 cm"
+    x$size2[x$height > 10] <- ">10 m"
     x$sizefac2 <- factor(x$size2, levels= c("<5 m", "5–10 m", ">10 m"))
     plotsize2 <- table(x$sizefac2)
     barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
