@@ -91,16 +91,16 @@ pcqm.indices <- function(x,
     barplot(plotsize / sum(plotsize), ylab="Proportion of forest trees", xlab="Tree diameter size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("burlywood3", "burlywood4", "saddlebrown"))
    
     # Plot of height proportions
-    x$size2 <- "<5 m"
-    x$size2[x$height >=5 & x$height<=10] <- "5–10 m"
-    x$size2[x$height > 10] <- ">10 m"
-    x$sizefac2 <- factor(x$size2, levels= c("<5 m", "5–10 m", ">10 m"))
-    plotsize2 <- table(x$sizefac2)
+    if("height" %in% colnames(x)) x$size2 <- "<5 m"
+    if("height" %in% colnames(x)) x$size2[x$height >=5 & x$height<=10] <- "5–10 m"
+    if("height" %in% colnames(x)) x$size2[x$height > 10] <- ">10 m"
+    if("height" %in% colnames(x)) x$sizefac2 <- factor(x$size2, levels= c("<5 m", "5–10 m", ">10 m"))
+    if("height" %in% colnames(x)) plotsize2 <- table(x$sizefac2)
     if("height" %in% colnames(x)) barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
   
     #Scatterplot of dbh vs height
-    plot(x$dbh, x$height, pch=21, xlab="Tree DBH (cm)", ylab="Tree Height (m)", cex.lab = 1.2, cex.axis = 1.1, col="black", bg = c("snow", "gray75", "black")[x$sizefac], ylim=c(0,max(x$height)+1), xlim=c(0,max(x$dbh)+1), yaxs="i", xaxs="i")
-    legend("bottomright",legend=c("<5 cm dbh","5–10 cm dbh",">10 cm dbh"),pch=c(21,21,21),col = "black", pt.bg = c("snow", "gray75", "black"), cex=1.2, pt.cex=1.2, title="DBH Size Class")
+    if("height" %in% colnames(x)) plot(x$dbh, x$height, pch=21, xlab="Tree DBH (cm)", ylab="Tree Height (m)", cex.lab = 1.2, cex.axis = 1.1, col="black", bg = c("snow", "gray75", "black")[x$sizefac], ylim=c(0,max(x$height)+1), xlim=c(0,max(x$dbh)+1), yaxs="i", xaxs="i")
+    if("height" %in% colnames(x)) legend("bottomright",legend=c("<5 cm dbh","5–10 cm dbh",">10 cm dbh"),pch=c(21,21,21),col = "black", pt.bg = c("snow", "gray75", "black"), cex=1.2, pt.cex=1.2, title="DBH Size Class")
   }
   }
   
