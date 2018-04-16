@@ -101,13 +101,13 @@ plot.method<-function(x,
   # Basal area summaries
   cat("\n\n BASAL AREA COMPUTATION\n -----\n")
   x$BA <- (3.14159265359 * (x$dbh/2) ^ 2) / 10000
-  densumBA <- plyr::ddply(x, "Species", summarize, MeanBA = round(mean(BA), digits=4))
+  densumBA <- plyr::ddply(x, "Species", summarize, Mean_BA = round(mean(BA), digits=4))
   densumBA <- plyr::join(densum2, densumBA, by="Species")
-  densumBA$Basal_Area <- densumBA$Stems_Per_0.1_Ha * densumBA$MeanBA
-  totbas <- sum(densumBA$Basal_Area)
-  myvars <- c("Species", "MeanBA","Basal_Area")
+  densumBA$Total_BA <- densumBA$Stems_Per_0.1_Ha * densumBA$Mean_BA
+  totbas <- sum(densumBA$Total_BA)
+  myvars <- c("Species", "Mean_BA","Total_BA")
   densumBA2 <- densumBA[myvars]
-  densumBA2 <- densumBA2[order(-densumBA2$Basal_Area),]
+  densumBA2 <- densumBA2[order(-densumBA2$Total_BA),]
   densumBA2$Rank <- 1:nrow(densumBA2)
   densumBA2 <- densumBA2[order(densumBA2$Species),]
   print.noquote(densumBA2, row.names = FALSE)
@@ -132,7 +132,7 @@ plot.method<-function(x,
   freqsum2 <- plyr::ddply(freqsum, "Species", summarize, Number = length(unique(PlotNumber)), Frequency = length(unique(PlotNumber)) / max(sum.n)*100)
   freqsum2$Relative_Frequency <- round(freqsum2$Frequency / totalfreq *100, digits=1)
   compare <- plyr::join(compare, freqsum2, by="Species")
-  compare$Relative_Dominance <- compare$Basal_Area/totbas*100
+  compare$Relative_Dominance <- compare$Total_BA/totbas*100
   compare$Relative_Dominance <- round(compare$Relative_Dominance, digits=1)
   compare <- plyr::ddply(compare, "Species", transform, Importance_Value = sum(Relative_Density+Relative_Dominance+Relative_Frequency))
   compare <- compare[order(-compare$Importance_Value),]
