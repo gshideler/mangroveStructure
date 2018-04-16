@@ -96,7 +96,7 @@ pcqm.indices <- function(x,
     x$size2[x$height > 10] <- ">10 m"
     x$sizefac2 <- factor(x$size2, levels= c("<5 m", "5–10 m", ">10 m"))
     plotsize2 <- table(x$sizefac2)
-    barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
+    if("height" %in% colnames(x)) barplot(plotsize2 / sum(plotsize2), ylab="Proportion of forest trees", xlab="Tree height size class", cex.lab = 1.2, cex.names=1.1, cex.axis = 1.1, ylim=c(0,1), col = c("darkolivegreen3", "forestgreen", "darkgreen"))
   
     #Scatterplot of dbh vs height
     plot(x$dbh, x$height, pch=21, xlab="Tree DBH (cm)", ylab="Tree Height (m)", cex.lab = 1.2, cex.axis = 1.1, col="black", bg = c("snow", "gray75", "black")[x$sizefac], ylim=c(0,max(x$height)+1), xlim=c(0,max(x$dbh)+1), yaxs="i", xaxs="i")
