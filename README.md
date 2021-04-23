@@ -3,6 +3,8 @@
 ## Description ##
 Set of tools to calculate mangrove forest structure using either the Point-Centered Quarter Method or fixed-area sampling methods. Outputs include density, diameter, basal area, height, as well as relative comparisons of density, dominance, frequency, and importance value (IV). Output also includes functions for common structural indices [e.g., Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984)] and visual representations of relative values and canopy height.
 
+For a full description of the package and the theories behind it, visit https://doi.org/10.21829/myb.2019.2511696.
+
 ----
 ## Installation ##
 
