@@ -8,12 +8,12 @@
 #' @param plot.radius Plot radius measured in meters. Default is 5 meters.
 #' @keywords mangrove structure, plot
 #' @examples
-#' plot.method(mangrove_data)
-#' plot.method(mangrove_data, species="Species", plot.radius=10, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
+#' circle.method(mangrove_data)
+#' circle.method(mangrove_data, species="Species", plot.radius=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
 #' @export
 
 # Function to analyze forest data using the Plot Method
-plot.method<-function(x,
+circle.method<-function(x,
                       plotnumber = 'plotnumber',
                       dbh = 'dbh',
                       species = 'species',
