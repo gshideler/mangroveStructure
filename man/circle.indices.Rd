@@ -25,8 +25,8 @@ plot.indices(x, plotnumber = "plotnumber", dbh = "dbh",
 This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for fixed-radius plot data.
 }
 \examples{
-plot.indices(mangrove_data)
-plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.radius = 5, sizebin=T)
+circle.indices(mangrove_data)
+cirlce.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.radius = 5, sizebin=T)
 }
 \keyword{Complexity}
 \keyword{Diameter}
