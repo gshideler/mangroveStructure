@@ -23,8 +23,8 @@ plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
 This function allows you to estimate mangrove forest structure based on sampling using fixed-radius plot sampling.
 }
 \examples{
-plot.method(mangrove_data)
-plot.method(mangrove_data, species="Species", plot.radius=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
+circle.method(mangrove_data)
+circle.method(mangrove_data, species="Species", plot.radius=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
 }
 \keyword{mangrove}
 \keyword{plot}
