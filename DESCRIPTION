@@ -1,8 +1,8 @@
 Package: mangroveStructure
 Type: Package
 Title: tools for calculating mangrove forest structure
-Version: 0.2.0
-Date: 2017-04-25
+Version: 0.3.0
+Date: 2021-10-01
 Authors@R: c(person("Geoffrey S", "Shideler", role = c("aut", "cre"),
                      email = "geoffreyshideler@gmail.com"),
               person("Rafael J", "Araújo", role = "aut", email = "raraujo@miami.edu"),
