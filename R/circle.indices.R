@@ -37,7 +37,7 @@ circle.indices <- function(x,
                            
         # Pre calculations
         radius = plot.radius
-        area = (3.14159265359 * radius ^ 2)
+        area = round((3.14159265359 * radius ^ 2), digits=2)
         x$areasum = area*length(unique(x$PlotNumber))
         x$count <- 1:nrow(x)
         x$rows <- max(x$count)
