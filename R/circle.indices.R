@@ -1,6 +1,6 @@
-#' Mangrove Indices for Plot Method
+#' Mangrove Indices for Fixed-Radius Plot Method
 #'
-#' This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for pcqm data.
+#' This function allows you to calculate the Holdridge Complexity Index and Mean Stand Diameter for fixed-radius plot data.
 #' @param plotnumber Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param species Column name in data frame for species. Default name is "species".
@@ -9,12 +9,12 @@
 #' @param sizebin Logical argument for displaying size class plot (Default is FALSE). If sizebin=TRUE, plot of size class proportions is displayed: seedling (<5 cm dbh), sapling (5-10 cm dbh), and pole (>10 cm dbh).
 #' @keywords mangrove structure, plot, Holdridge Complexity Index, Mean Stand Diameter
 #' @examples
-#' plot.indices(mangrove_data)
-#' plot.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.radius = 5, sizebin=T)
+#' circle.indices(mangrove_data)
+#' circle.indices(mangrove_data, plotnumber = "Plot", species = "Species", plot.radius = 5, sizebin=T)
 #' @export
 
-# Function to obtain Plot Method Indices
-plot.indices <- function(x, 
+# Function to obtain Fixed-Radius Plot Method Indices
+circle.indices <- function(x, 
                          plotnumber = 'plotnumber',
                          dbh = 'dbh',
                          species = 'species',
