@@ -1,6 +1,6 @@
 #' Mangrove Fixed-Radius Plot Method Analysis
 #'
-#' This function allows you to estimate mangrove forest structure based on sampling using fixed-radius plot sampling.
+#' This function allows you to estimate mangrove forest structure based on sampling using fixed-radius plots.
 #' @param plotnumber Column name in data frame for plot number (numerical). Default name is "plotnumber". First plot number must be 1.
 #' @param dbh Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.
 #' @param species Column name in data frame for species. Default name is "species".
