@@ -12,7 +12,7 @@
 #' circle.method(mangrove_data, species="Species", plot.radius=5, plotnumber = "Plot", dbh="Diameter", height="Tree.Height")
 #' @export
 
-# Function to analyze forest data using the Plot Method
+# Function to analyze forest data using the Fixed-Radius Plot Method
 circle.method<-function(x,
                       plotnumber = 'plotnumber',
                       dbh = 'dbh',
@@ -68,7 +68,7 @@ circle.method<-function(x,
   
   
   cat("\n ---------------------------------------------------")
-  cat("\n Plot Method data analysis summary")
+  cat("\n Fixed-Radius Plot Method data analysis summary")
   cat("\n ---------------------------------------------------\n\n")
   cat(paste(" Number of plots =", length(unique(x$PlotNumber))))
   cat(paste(",   Total number of trees =", max(x$rows)))
