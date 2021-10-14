@@ -8,7 +8,7 @@ plot.method(x, plotnumber = "plotnumber", dbh = "dbh",
   species = "species", height = "height", plot.radius = 5)
 }
 \arguments{
-\item{plotnumber}{Column name in data frame for plot nymber (numerical). Default name is "plotnumber". First plot number must be 1.}
+\item{plotnumber}{Column name in data frame for plot number (numerical). Default name is "plotnumber". First plot number must be 1.}
 
 \item{dbh}{Column name in data frame for diameter at breast height. Default name is "dbh". Values must be in centimeters.}
 
