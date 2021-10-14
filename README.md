@@ -38,6 +38,12 @@ This function allows you to estimate mangrove forest structure based on fixed-ar
 #### plot.indices() ####
 This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-area sampling (plot). Height is required for the Holdridge Complexity Index.
 
+#### circle.method() ####
+This function allows you to estimate mangrove forest structure based on fixed-radius plots. Outputs a data frame of the table of relative metrics, importance values, and ranking.
+
+#### circle.indices() ####
+This function allows you to calculate the Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984) using fixed-radius plots. Height is required for the Holdridge Complexity Index.
+
 #### iv.plot() ####
 This function allows you to create a importance value plot using a data object created from either pcqm.method() or plot.method(), based on radarchart() from the 'fmsb' package.
 
