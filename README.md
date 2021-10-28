@@ -89,7 +89,6 @@ circleplot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshid
 r3 <- circle.method(circleplot_data, plot.radius = 5.65)
 iv.plot(r3, colors = c("black", "forestgreen", "lightblue", "firebrick1"))
 circle.indices(circleplot_data, sizebin=TRUE)
-```
 
 ----
 ## License ##
