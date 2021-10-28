@@ -1,9 +1,11 @@
 # Mangrove forest structure package in R #
 
 ## Description ##
-Set of tools to calculate mangrove forest structure using either the Point-Centered Quarter Method or fixed-area sampling methods. Outputs include density, diameter, basal area, height, as well as relative comparisons of density, dominance, frequency, and importance value (IV). Output also includes functions for common structural indices [e.g., Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984)] and visual representations of relative values and canopy height.
+Set of tools to calculate mangrove forest structure using either the Point-Centered Quarter Method or fixed-area sampling methods (i.e., square, rectangular or circular plot designs). Outputs include density, diameter, basal area, height, as well as relative comparisons of density, dominance, frequency, and importance value (IV). Output also includes functions for common structural indices [e.g., Holdridge Complexity Index (Holdridge 1967) and Mean Stand Diameter (Cintrón and Schaeffer Novelli 1984)] and visual representations of relative values and canopy height.
 
 For a full description of the package and the theories behind it, visit https://myb.ojs.inecol.mx/index.php/myb/article/view/e2511696/1928.
+
+The package was updated in October 2021 (v0.3.0) and now includes the funtions circle.method() and circle.indices() to process data collected from fixed-radius (circular) plots.  Although the publication does not include a detailed description of these added functions, the rationale, outputs, and mechanics are similar to the ones described in the publication for plot sampling.
 
 ----
 ## Installation ##
@@ -79,6 +81,14 @@ plot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/m
 r2 <- plot.method(plot_data)
 iv.plot(r2, colors = c("black", "gray", "firebrick1"))
 plot.indices(plot_data, sizebin=TRUE)
+```
+
+#### Compute structure for fixed-radius sampling plots #### 
+
+circleplot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/circleplot_data.csv"), header=TRUE)
+r3 <- circle.method(circleplot_data, plot.radius = 5.65)
+iv.plot(r3, colors = c("black", "forestgreen", "lightblue", "firebrick1"))
+circle.indices(circleplot_data, sizebin=TRUE)
 ```
 
 ----
