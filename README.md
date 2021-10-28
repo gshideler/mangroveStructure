@@ -84,11 +84,13 @@ plot.indices(plot_data, sizebin=TRUE)
 ```
 
 #### Compute structure for fixed-radius sampling plots #### 
-
+```
 circleplot_data <- read.csv(text=getURL("https://raw.githubusercontent.com/gshideler/mangroveStructure/master/testdata/circleplot_data.csv"), header=TRUE)
+
 r3 <- circle.method(circleplot_data, plot.radius = 5.65)
 iv.plot(r3, colors = c("black", "forestgreen", "lightblue", "firebrick1"))
 circle.indices(circleplot_data, sizebin=TRUE)
+```
 
 ----
 ## License ##
